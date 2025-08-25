@@ -1,0 +1,549 @@
+
+DIA-NN 2.1.0 Academia  (Data-Independent Acquisition by Neural Networks)
+Compiled on Mar 25 2025 10:59:54
+Current date and time: Sun Apr 27 12:50:40 2025
+CPU: AuthenticAMD AMD Ryzen 9 5950X 16-Core Processor
+SIMD instructions: AVX AVX2 FMA SSE4.1 SSE4.2 SSE4a 
+Logical CPU cores: 32
+diann.exe --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14627_MB057_Ctrl_01_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14628_MB057_ProSer_01_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14629_MB057_ArgSer_01_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14630_MB057_ProAla_01_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14632_MB057_ArgSer_02_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14633_MB057_ProSer_02_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14634_MB057_ProAla_02_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14635_MB057_Ctrl_02_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14637_MB057_ProSer_03_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14638_MB057_Ctrl_03_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14639_MB057_ArgSer_03_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14640_MB057_ProAla_03_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14642_MB057_Ctrl_04_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14643_MB057_ProAla_04_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14644_MB057_ArgSer_04_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14645_MB057_ProSer_04_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14647_MB057_ProAla_05_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14648_MB057_Ctrl_05_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14649_MB057_ProSer_05_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14650_MB057_ArgSer_05_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14652_MB057_ProSer_06_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14653_MB057_ArgSer_06_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14654_MB057_Ctrl_06_Proteome_DIA.mzML  --f F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14655_MB057_ProAla_06_Proteome_DIA.mzML  --lib F:\MB057_MistranslatingOmics\202408_WholeProteome\MSFragger_Library\library.tsv --threads 16 --verbose 1 --out F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.parquet --qvalue 0.01 --matrices --reannotate --fasta camprotR_240512_cRAP_20190401_full_tags.fasta --cont-quant-exclude cRAP- --fasta E:\Matt\MB057_MistranslationMultiOmics\2024-04-22-decoys-reviewed-contam-UP000002311.fas --met-excision --min-pep-len 7 --max-pep-len 50 --min-pr-mz 300 --max-pr-mz 1800 --min-pr-charge 1 --max-pr-charge 4 --cut K*,R* --missed-cleavages 1 --unimod4 --var-mods 2 --var-mod UniMod:35,15.994915,M --proteoforms --rt-profiling --export-quant 
+
+Thread number set to 16
+Output will be filtered at 0.01 FDR
+Precursor/protein x samples expression level matrices will be saved along with the main report
+Library precursors will be reannotated using the FASTA database
+Peptides corresponding to protein sequence IDs tagged with cRAP- will be excluded from normalisation as well as quantification of protein groups that do not include proteins bearing the tag
+N-terminal methionine excision enabled
+Min peptide length set to 7
+Max peptide length set to 50
+Min precursor m/z set to 300
+Max precursor m/z set to 1800
+Min precursor charge set to 1
+Max precursor charge set to 4
+In silico digest will involve cuts at K*,R*
+Maximum number of missed cleavages set to 1
+Cysteine carbamidomethylation enabled as a fixed modification
+Maximum number of variable modifications set to 2
+Modification UniMod:35 with mass delta 15.9949 at M will be considered as variable
+Protein identification will rely on peptidoform confidence for matched peptides
+The spectral library (if generated) will retain the original spectra but will include empirically-aligned RTs
+full quantification information will be exported in .parquet format
+DIA-NN will automatically optimise the mass accuracy for the first run of the experiment, use this mode for preliminary analyses only
+The following variable modifications will be localised: UniMod:35 
+
+24 files will be processed
+[0:00] Loading spectral library F:\MB057_MistranslatingOmics\202408_WholeProteome\MSFragger_Library\library.tsv
+[0:05] Spectral library loaded: 4834 protein isoforms, 4834 protein groups and 100399 precursors in 79237 elution groups.
+[0:05] Loading FASTA camprotR_240512_cRAP_20190401_full_tags.fasta
+[0:05] Loading FASTA E:\Matt\MB057_MistranslationMultiOmics\2024-04-22-decoys-reviewed-contam-UP000002311.fas
+[0:11] Reannotating library precursors with information from the FASTA database
+[0:11] Finding proteotypic peptides (assuming that the list of UniProt ids provided for each peptide is complete)
+[0:11] 100399 precursors generated
+[0:11] Gene names missing for some isoforms
+[0:11] Library contains 5086 proteins, and 5086 genes
+[0:11] Initialising library
+[0:12] Saving the library to F:\MB057_MistranslatingOmics\202408_WholeProteome\MSFragger_Library\library.tsv.skyline.speclib
+
+[0:13] File #1/24
+[0:13] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14627_MB057_Ctrl_01_Proteome_DIA.mzML
+[1:49] Pre-processing...
+[1:52] 2978 MS1 and 178680 MS2 scans in 2978 (inferred) and 1489 (encoded) cycles, 96302 precursors in range
+[1:52] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[1:54] RT window set to 2.42989
+[1:54] Peak width: 4.588
+[1:54] Scan window radius set to 10
+[1:54] Recommended MS1 mass accuracy setting: 7 ppm
+[1:56] Optimised mass accuracy: 14 ppm
+[1:57] Main search
+[2:04] Removing low confidence identifications
+[2:10] Removing interfering precursors
+[2:11] Training neural networks on 64297 target and 39788 decoy PSMs
+[2:38] Number of IDs at 0.01 FDR: 76148
+[2:39] Calculating protein q-values
+[2:39] Number of genes identified at 1% FDR: 4631 (precursor-level), 4571 (protein-level) (inference performed using proteotypic peptides only)
+[2:39] Quantification
+[2:40] Precursors with scored PTMs at 1% FDR: 6970 out of 6970 considered
+[2:40] Precursors with all scored PTM sites unoccupied at 1% FDR: 69178
+[2:40] Precursors with PTMs localised (when required) with > 90% confidence: 6733 out of 6970
+[2:41] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14627_MB057_Ctrl_01_Proteome_DIA.mzML.quant
+
+[2:41] File #2/24
+[2:41] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14628_MB057_ProSer_01_Proteome_DIA.mzML
+[4:26] Pre-processing...
+[4:30] 2978 MS1 and 178680 MS2 scans in 2978 (inferred) and 1489 (encoded) cycles, 96302 precursors in range
+[4:30] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[4:31] RT window set to 2.42591
+[4:31] Recommended MS1 mass accuracy setting: 7 ppm
+[4:32] Main search
+[4:39] Removing low confidence identifications
+[4:45] Removing interfering precursors
+[4:46] Training neural networks on 63609 target and 39607 decoy PSMs
+[5:12] Number of IDs at 0.01 FDR: 74239
+[5:13] Calculating protein q-values
+[5:13] Number of genes identified at 1% FDR: 4601 (precursor-level), 4542 (protein-level) (inference performed using proteotypic peptides only)
+[5:13] Quantification
+[5:14] Precursors with scored PTMs at 1% FDR: 6574 out of 6574 considered
+[5:14] Precursors with all scored PTM sites unoccupied at 1% FDR: 67665
+[5:14] Precursors with PTMs localised (when required) with > 90% confidence: 6332 out of 6574
+[5:15] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14628_MB057_ProSer_01_Proteome_DIA.mzML.quant
+
+[5:15] File #3/24
+[5:15] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14629_MB057_ArgSer_01_Proteome_DIA.mzML
+[6:56] Pre-processing...
+[7:00] 2976 MS1 and 178560 MS2 scans in 2976 (inferred) and 1488 (encoded) cycles, 96302 precursors in range
+[7:00] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[7:01] RT window set to 2.42631
+[7:01] Recommended MS1 mass accuracy setting: 7 ppm
+[7:02] Main search
+[7:09] Removing low confidence identifications
+[7:15] Removing interfering precursors
+[7:16] Training neural networks on 63663 target and 39559 decoy PSMs
+[7:42] Number of IDs at 0.01 FDR: 74225
+[7:43] Calculating protein q-values
+[7:43] Number of genes identified at 1% FDR: 4618 (precursor-level), 4538 (protein-level) (inference performed using proteotypic peptides only)
+[7:43] Quantification
+[7:44] Precursors with scored PTMs at 1% FDR: 6773 out of 6773 considered
+[7:44] Precursors with all scored PTM sites unoccupied at 1% FDR: 67452
+[7:44] Precursors with PTMs localised (when required) with > 90% confidence: 6553 out of 6773
+[7:45] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14629_MB057_ArgSer_01_Proteome_DIA.mzML.quant
+
+[7:45] File #4/24
+[7:45] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14630_MB057_ProAla_01_Proteome_DIA.mzML
+[9:21] Pre-processing...
+[9:24] 2990 MS1 and 179400 MS2 scans in 2990 (inferred) and 1495 (encoded) cycles, 96302 precursors in range
+[9:24] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[9:26] RT window set to 2.46123
+[9:26] Recommended MS1 mass accuracy setting: 7 ppm
+[9:27] Main search
+[9:34] Removing low confidence identifications
+[9:40] Removing interfering precursors
+[9:41] Training neural networks on 64576 target and 39883 decoy PSMs
+[10:08] Number of IDs at 0.01 FDR: 75711
+[10:08] Calculating protein q-values
+[10:08] Number of genes identified at 1% FDR: 4591 (precursor-level), 4531 (protein-level) (inference performed using proteotypic peptides only)
+[10:08] Quantification
+[10:09] Precursors with scored PTMs at 1% FDR: 5658 out of 5658 considered
+[10:09] Precursors with all scored PTM sites unoccupied at 1% FDR: 70053
+[10:09] Precursors with PTMs localised (when required) with > 90% confidence: 5465 out of 5658
+[10:10] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14630_MB057_ProAla_01_Proteome_DIA.mzML.quant
+
+[10:10] File #5/24
+[10:10] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14632_MB057_ArgSer_02_Proteome_DIA.mzML
+[11:43] Pre-processing...
+[11:47] 2970 MS1 and 178200 MS2 scans in 2970 (inferred) and 1485 (encoded) cycles, 96302 precursors in range
+[11:47] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[11:48] RT window set to 2.40827
+[11:48] Recommended MS1 mass accuracy setting: 7 ppm
+[11:49] Main search
+[11:56] Removing low confidence identifications
+[12:02] Removing interfering precursors
+[12:03] Training neural networks on 63688 target and 40397 decoy PSMs
+[12:29] Number of IDs at 0.01 FDR: 72959
+[12:30] Calculating protein q-values
+[12:30] Number of genes identified at 1% FDR: 4605 (precursor-level), 4539 (protein-level) (inference performed using proteotypic peptides only)
+[12:30] Quantification
+[12:31] Precursors with scored PTMs at 1% FDR: 6353 out of 6353 considered
+[12:31] Precursors with all scored PTM sites unoccupied at 1% FDR: 66606
+[12:31] Precursors with PTMs localised (when required) with > 90% confidence: 6115 out of 6353
+[12:32] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14632_MB057_ArgSer_02_Proteome_DIA.mzML.quant
+
+[12:32] File #6/24
+[12:32] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14633_MB057_ProSer_02_Proteome_DIA.mzML
+[14:05] Pre-processing...
+[14:09] 2976 MS1 and 178560 MS2 scans in 2976 (inferred) and 1488 (encoded) cycles, 96302 precursors in range
+[14:09] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[14:10] RT window set to 2.41776
+[14:10] Recommended MS1 mass accuracy setting: 7 ppm
+[14:11] Main search
+[14:18] Removing low confidence identifications
+[14:24] Removing interfering precursors
+[14:25] Training neural networks on 64280 target and 39851 decoy PSMs
+[14:52] Number of IDs at 0.01 FDR: 75543
+[14:52] Calculating protein q-values
+[14:52] Number of genes identified at 1% FDR: 4607 (precursor-level), 4538 (protein-level) (inference performed using proteotypic peptides only)
+[14:52] Quantification
+[14:53] Precursors with scored PTMs at 1% FDR: 6745 out of 6745 considered
+[14:53] Precursors with all scored PTM sites unoccupied at 1% FDR: 68798
+[14:53] Precursors with PTMs localised (when required) with > 90% confidence: 6508 out of 6745
+[14:55] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14633_MB057_ProSer_02_Proteome_DIA.mzML.quant
+
+[14:55] File #7/24
+[14:55] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14634_MB057_ProAla_02_Proteome_DIA.mzML
+[16:27] Pre-processing...
+[16:30] 2970 MS1 and 178200 MS2 scans in 2970 (inferred) and 1485 (encoded) cycles, 96302 precursors in range
+[16:30] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[16:32] RT window set to 2.39396
+[16:32] Recommended MS1 mass accuracy setting: 7 ppm
+[16:33] Main search
+[16:39] Removing low confidence identifications
+[16:46] Removing interfering precursors
+[16:46] Training neural networks on 64231 target and 40011 decoy PSMs
+[17:13] Number of IDs at 0.01 FDR: 75343
+[17:13] Calculating protein q-values
+[17:14] Number of genes identified at 1% FDR: 4619 (precursor-level), 4544 (protein-level) (inference performed using proteotypic peptides only)
+[17:14] Quantification
+[17:15] Precursors with scored PTMs at 1% FDR: 6837 out of 6837 considered
+[17:15] Precursors with all scored PTM sites unoccupied at 1% FDR: 68506
+[17:15] Precursors with PTMs localised (when required) with > 90% confidence: 6592 out of 6837
+[17:16] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14634_MB057_ProAla_02_Proteome_DIA.mzML.quant
+
+[17:16] File #8/24
+[17:16] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14635_MB057_Ctrl_02_Proteome_DIA.mzML
+[18:45] Pre-processing...
+[18:49] 2972 MS1 and 178320 MS2 scans in 2972 (inferred) and 1486 (encoded) cycles, 96302 precursors in range
+[18:49] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[18:50] RT window set to 2.4225
+[18:50] Recommended MS1 mass accuracy setting: 6 ppm
+[18:51] Main search
+[18:58] Removing low confidence identifications
+[19:04] Removing interfering precursors
+[19:05] Training neural networks on 64068 target and 40772 decoy PSMs
+[19:32] Number of IDs at 0.01 FDR: 74534
+[19:33] Calculating protein q-values
+[19:33] Number of genes identified at 1% FDR: 4632 (precursor-level), 4571 (protein-level) (inference performed using proteotypic peptides only)
+[19:33] Quantification
+[19:34] Precursors with scored PTMs at 1% FDR: 6850 out of 6850 considered
+[19:34] Precursors with all scored PTM sites unoccupied at 1% FDR: 67684
+[19:34] Precursors with PTMs localised (when required) with > 90% confidence: 6613 out of 6850
+[19:35] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14635_MB057_Ctrl_02_Proteome_DIA.mzML.quant
+
+[19:35] File #9/24
+[19:35] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14637_MB057_ProSer_03_Proteome_DIA.mzML
+[21:08] Pre-processing...
+[21:12] 2970 MS1 and 178200 MS2 scans in 2970 (inferred) and 1485 (encoded) cycles, 96302 precursors in range
+[21:12] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[21:13] RT window set to 2.42159
+[21:13] Recommended MS1 mass accuracy setting: 7 ppm
+[21:14] Main search
+[21:21] Removing low confidence identifications
+[21:27] Removing interfering precursors
+[21:28] Training neural networks on 64439 target and 40064 decoy PSMs
+[21:55] Number of IDs at 0.01 FDR: 76336
+[21:55] Calculating protein q-values
+[21:55] Number of genes identified at 1% FDR: 4634 (precursor-level), 4578 (protein-level) (inference performed using proteotypic peptides only)
+[21:55] Quantification
+[21:56] Precursors with scored PTMs at 1% FDR: 7015 out of 7015 considered
+[21:56] Precursors with all scored PTM sites unoccupied at 1% FDR: 69321
+[21:56] Precursors with PTMs localised (when required) with > 90% confidence: 6751 out of 7015
+[21:58] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14637_MB057_ProSer_03_Proteome_DIA.mzML.quant
+
+[21:58] File #10/24
+[21:58] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14638_MB057_Ctrl_03_Proteome_DIA.mzML
+[23:27] Pre-processing...
+[23:30] 2968 MS1 and 178080 MS2 scans in 2968 (inferred) and 1484 (encoded) cycles, 96302 precursors in range
+[23:30] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[23:33] RT window set to 2.40911
+[23:33] Recommended MS1 mass accuracy setting: 6 ppm
+[23:34] Main search
+[23:41] Removing low confidence identifications
+[23:47] Removing interfering precursors
+[23:47] Training neural networks on 62632 target and 39055 decoy PSMs
+[24:14] Number of IDs at 0.01 FDR: 70529
+[24:14] Calculating protein q-values
+[24:14] Number of genes identified at 1% FDR: 4590 (precursor-level), 4522 (protein-level) (inference performed using proteotypic peptides only)
+[24:14] Quantification
+[24:15] Precursors with scored PTMs at 1% FDR: 6506 out of 6506 considered
+[24:15] Precursors with all scored PTM sites unoccupied at 1% FDR: 64023
+[24:15] Precursors with PTMs localised (when required) with > 90% confidence: 6266 out of 6506
+[24:17] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14638_MB057_Ctrl_03_Proteome_DIA.mzML.quant
+
+[24:17] File #11/24
+[24:17] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14639_MB057_ArgSer_03_Proteome_DIA.mzML
+[25:42] Pre-processing...
+[25:46] 2966 MS1 and 177960 MS2 scans in 2966 (inferred) and 1483 (encoded) cycles, 96302 precursors in range
+[25:46] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[25:47] RT window set to 2.41636
+[25:47] Recommended MS1 mass accuracy setting: 6 ppm
+[25:48] Main search
+[25:55] Removing low confidence identifications
+[26:01] Removing interfering precursors
+[26:01] Training neural networks on 64104 target and 39711 decoy PSMs
+[26:29] Number of IDs at 0.01 FDR: 75839
+[26:29] Calculating protein q-values
+[26:29] Number of genes identified at 1% FDR: 4627 (precursor-level), 4580 (protein-level) (inference performed using proteotypic peptides only)
+[26:29] Quantification
+[26:30] Precursors with scored PTMs at 1% FDR: 7180 out of 7180 considered
+[26:30] Precursors with all scored PTM sites unoccupied at 1% FDR: 68659
+[26:30] Precursors with PTMs localised (when required) with > 90% confidence: 6911 out of 7180
+[26:31] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14639_MB057_ArgSer_03_Proteome_DIA.mzML.quant
+
+[26:31] File #12/24
+[26:31] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14640_MB057_ProAla_03_Proteome_DIA.mzML
+[27:58] Pre-processing...
+[28:01] 2966 MS1 and 177960 MS2 scans in 2966 (inferred) and 1483 (encoded) cycles, 96302 precursors in range
+[28:01] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[28:03] RT window set to 2.40636
+[28:03] Recommended MS1 mass accuracy setting: 6 ppm
+[28:04] Main search
+[28:10] Removing low confidence identifications
+[28:17] Removing interfering precursors
+[28:17] Training neural networks on 63827 target and 40626 decoy PSMs
+[28:44] Number of IDs at 0.01 FDR: 73676
+[28:45] Calculating protein q-values
+[28:45] Number of genes identified at 1% FDR: 4611 (precursor-level), 4567 (protein-level) (inference performed using proteotypic peptides only)
+[28:45] Quantification
+[28:46] Precursors with scored PTMs at 1% FDR: 7002 out of 7002 considered
+[28:46] Precursors with all scored PTM sites unoccupied at 1% FDR: 66674
+[28:46] Precursors with PTMs localised (when required) with > 90% confidence: 6764 out of 7002
+[28:47] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14640_MB057_ProAla_03_Proteome_DIA.mzML.quant
+
+[28:47] File #13/24
+[28:47] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14642_MB057_Ctrl_04_Proteome_DIA.mzML
+[30:18] Pre-processing...
+[30:22] 2976 MS1 and 178560 MS2 scans in 2976 (inferred) and 1488 (encoded) cycles, 96302 precursors in range
+[30:22] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[30:24] RT window set to 2.4208
+[30:24] Recommended MS1 mass accuracy setting: 6 ppm
+[30:25] Main search
+[30:31] Removing low confidence identifications
+[30:37] Removing interfering precursors
+[30:38] Training neural networks on 63722 target and 39656 decoy PSMs
+[31:05] Number of IDs at 0.01 FDR: 74364
+[31:05] Calculating protein q-values
+[31:05] Number of genes identified at 1% FDR: 4616 (precursor-level), 4569 (protein-level) (inference performed using proteotypic peptides only)
+[31:05] Quantification
+[31:06] Precursors with scored PTMs at 1% FDR: 7091 out of 7091 considered
+[31:06] Precursors with all scored PTM sites unoccupied at 1% FDR: 67273
+[31:06] Precursors with PTMs localised (when required) with > 90% confidence: 6820 out of 7091
+[31:07] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14642_MB057_Ctrl_04_Proteome_DIA.mzML.quant
+
+[31:07] File #14/24
+[31:07] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14643_MB057_ProAla_04_Proteome_DIA.mzML
+[32:36] Pre-processing...
+[32:39] 2964 MS1 and 177840 MS2 scans in 2964 (inferred) and 1482 (encoded) cycles, 96302 precursors in range
+[32:39] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[32:42] RT window set to 2.40858
+[32:43] Recommended MS1 mass accuracy setting: 6 ppm
+[32:43] Main search
+[32:50] Removing low confidence identifications
+[32:56] Removing interfering precursors
+[32:57] Training neural networks on 63658 target and 40743 decoy PSMs
+[33:24] Number of IDs at 0.01 FDR: 72657
+[33:24] Calculating protein q-values
+[33:24] Number of genes identified at 1% FDR: 4586 (precursor-level), 4540 (protein-level) (inference performed using proteotypic peptides only)
+[33:24] Quantification
+[33:25] Precursors with scored PTMs at 1% FDR: 6912 out of 6912 considered
+[33:25] Precursors with all scored PTM sites unoccupied at 1% FDR: 65745
+[33:25] Precursors with PTMs localised (when required) with > 90% confidence: 6675 out of 6912
+[33:27] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14643_MB057_ProAla_04_Proteome_DIA.mzML.quant
+
+[33:27] File #15/24
+[33:27] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14644_MB057_ArgSer_04_Proteome_DIA.mzML
+[34:54] Pre-processing...
+[34:58] 2972 MS1 and 178320 MS2 scans in 2972 (inferred) and 1486 (encoded) cycles, 96302 precursors in range
+[34:58] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[34:59] RT window set to 2.40833
+[34:59] Recommended MS1 mass accuracy setting: 6 ppm
+[35:00] Main search
+[35:07] Removing low confidence identifications
+[35:13] Removing interfering precursors
+[35:14] Training neural networks on 63770 target and 40605 decoy PSMs
+[35:41] Number of IDs at 0.01 FDR: 73448
+[35:41] Calculating protein q-values
+[35:41] Number of genes identified at 1% FDR: 4604 (precursor-level), 4533 (protein-level) (inference performed using proteotypic peptides only)
+[35:41] Quantification
+[35:42] Precursors with scored PTMs at 1% FDR: 6828 out of 6828 considered
+[35:42] Precursors with all scored PTM sites unoccupied at 1% FDR: 66620
+[35:42] Precursors with PTMs localised (when required) with > 90% confidence: 6575 out of 6828
+[35:43] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14644_MB057_ArgSer_04_Proteome_DIA.mzML.quant
+
+[35:43] File #16/24
+[35:43] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14645_MB057_ProSer_04_Proteome_DIA.mzML
+[37:16] Pre-processing...
+[37:19] 2974 MS1 and 178440 MS2 scans in 2974 (inferred) and 1487 (encoded) cycles, 96302 precursors in range
+[37:19] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[37:21] RT window set to 2.44872
+[37:21] Recommended MS1 mass accuracy setting: 6 ppm
+[37:22] Main search
+[37:29] Removing low confidence identifications
+[37:35] Removing interfering precursors
+[37:36] Training neural networks on 64025 target and 40016 decoy PSMs
+[38:03] Number of IDs at 0.01 FDR: 75160
+[38:04] Calculating protein q-values
+[38:04] Number of genes identified at 1% FDR: 4605 (precursor-level), 4538 (protein-level) (inference performed using proteotypic peptides only)
+[38:04] Quantification
+[38:05] Precursors with scored PTMs at 1% FDR: 7159 out of 7159 considered
+[38:05] Precursors with all scored PTM sites unoccupied at 1% FDR: 68001
+[38:05] Precursors with PTMs localised (when required) with > 90% confidence: 6885 out of 7159
+[38:06] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14645_MB057_ProSer_04_Proteome_DIA.mzML.quant
+
+[38:06] File #17/24
+[38:06] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14647_MB057_ProAla_05_Proteome_DIA.mzML
+[39:32] Pre-processing...
+[39:36] 2970 MS1 and 178200 MS2 scans in 2970 (inferred) and 1485 (encoded) cycles, 96302 precursors in range
+[39:36] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[39:39] RT window set to 2.41349
+[39:39] Recommended MS1 mass accuracy setting: 6 ppm
+[39:40] Main search
+[39:47] Removing low confidence identifications
+[39:53] Removing interfering precursors
+[39:54] Training neural networks on 63808 target and 40669 decoy PSMs
+[40:21] Number of IDs at 0.01 FDR: 73208
+[40:21] Calculating protein q-values
+[40:21] Number of genes identified at 1% FDR: 4604 (precursor-level), 4545 (protein-level) (inference performed using proteotypic peptides only)
+[40:21] Quantification
+[40:22] Precursors with scored PTMs at 1% FDR: 6701 out of 6701 considered
+[40:22] Precursors with all scored PTM sites unoccupied at 1% FDR: 66507
+[40:22] Precursors with PTMs localised (when required) with > 90% confidence: 6461 out of 6701
+[40:23] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14647_MB057_ProAla_05_Proteome_DIA.mzML.quant
+
+[40:23] File #18/24
+[40:23] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14648_MB057_Ctrl_05_Proteome_DIA.mzML
+[41:52] Pre-processing...
+[41:56] 2980 MS1 and 178800 MS2 scans in 2980 (inferred) and 1490 (encoded) cycles, 96302 precursors in range
+[41:56] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[41:57] RT window set to 2.42466
+[41:57] Recommended MS1 mass accuracy setting: 6 ppm
+[41:58] Main search
+[42:05] Removing low confidence identifications
+[42:11] Removing interfering precursors
+[42:12] Training neural networks on 64281 target and 39619 decoy PSMs
+[42:39] Number of IDs at 0.01 FDR: 75881
+[42:39] Calculating protein q-values
+[42:39] Number of genes identified at 1% FDR: 4624 (precursor-level), 4554 (protein-level) (inference performed using proteotypic peptides only)
+[42:39] Quantification
+[42:40] Precursors with scored PTMs at 1% FDR: 7077 out of 7077 considered
+[42:40] Precursors with all scored PTM sites unoccupied at 1% FDR: 68804
+[42:40] Precursors with PTMs localised (when required) with > 90% confidence: 6814 out of 7077
+[42:42] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14648_MB057_Ctrl_05_Proteome_DIA.mzML.quant
+
+[42:42] File #19/24
+[42:42] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14649_MB057_ProSer_05_Proteome_DIA.mzML
+[44:10] Pre-processing...
+[44:13] 2974 MS1 and 178440 MS2 scans in 2974 (inferred) and 1487 (encoded) cycles, 96302 precursors in range
+[44:13] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[44:15] RT window set to 2.4491
+[44:15] Recommended MS1 mass accuracy setting: 7 ppm
+[44:16] Main search
+[44:22] Removing low confidence identifications
+[44:29] Removing interfering precursors
+[44:29] Training neural networks on 64539 target and 40107 decoy PSMs
+[44:56] Number of IDs at 0.01 FDR: 76667
+[44:57] Calculating protein q-values
+[44:57] Number of genes identified at 1% FDR: 4636 (precursor-level), 4547 (protein-level) (inference performed using proteotypic peptides only)
+[44:57] Quantification
+[44:58] Precursors with scored PTMs at 1% FDR: 7139 out of 7139 considered
+[44:58] Precursors with all scored PTM sites unoccupied at 1% FDR: 69528
+[44:58] Precursors with PTMs localised (when required) with > 90% confidence: 6877 out of 7139
+[45:00] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14649_MB057_ProSer_05_Proteome_DIA.mzML.quant
+
+[45:00] File #20/24
+[45:00] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14650_MB057_ArgSer_05_Proteome_DIA.mzML
+[46:26] Pre-processing...
+[46:30] 2972 MS1 and 178320 MS2 scans in 2972 (inferred) and 1486 (encoded) cycles, 96302 precursors in range
+[46:30] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[46:31] RT window set to 2.41836
+[46:31] Recommended MS1 mass accuracy setting: 7 ppm
+[46:32] Main search
+[46:39] Removing low confidence identifications
+[46:45] Removing interfering precursors
+[46:46] Training neural networks on 64203 target and 39790 decoy PSMs
+[47:13] Number of IDs at 0.01 FDR: 75488
+[47:13] Calculating protein q-values
+[47:14] Number of genes identified at 1% FDR: 4627 (precursor-level), 4563 (protein-level) (inference performed using proteotypic peptides only)
+[47:14] Quantification
+[47:15] Precursors with scored PTMs at 1% FDR: 7081 out of 7081 considered
+[47:15] Precursors with all scored PTM sites unoccupied at 1% FDR: 68407
+[47:15] Precursors with PTMs localised (when required) with > 90% confidence: 6817 out of 7081
+[47:16] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14650_MB057_ArgSer_05_Proteome_DIA.mzML.quant
+
+[47:16] File #21/24
+[47:16] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14652_MB057_ProSer_06_Proteome_DIA.mzML
+[48:44] Pre-processing...
+[48:47] 2982 MS1 and 178920 MS2 scans in 2982 (inferred) and 1491 (encoded) cycles, 96302 precursors in range
+[48:47] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[48:49] RT window set to 2.45736
+[48:49] Recommended MS1 mass accuracy setting: 6 ppm
+[48:50] Main search
+[48:57] Removing low confidence identifications
+[49:03] Removing interfering precursors
+[49:04] Training neural networks on 64399 target and 39679 decoy PSMs
+[49:31] Number of IDs at 0.01 FDR: 75854
+[49:31] Calculating protein q-values
+[49:32] Number of genes identified at 1% FDR: 4627 (precursor-level), 4553 (protein-level) (inference performed using proteotypic peptides only)
+[49:32] Quantification
+[49:33] Precursors with scored PTMs at 1% FDR: 6684 out of 6684 considered
+[49:33] Precursors with all scored PTM sites unoccupied at 1% FDR: 69170
+[49:33] Precursors with PTMs localised (when required) with > 90% confidence: 6425 out of 6684
+[49:34] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14652_MB057_ProSer_06_Proteome_DIA.mzML.quant
+
+[49:34] File #22/24
+[49:34] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14653_MB057_ArgSer_06_Proteome_DIA.mzML
+[51:03] Pre-processing...
+[51:07] 2990 MS1 and 179400 MS2 scans in 2990 (inferred) and 1495 (encoded) cycles, 96302 precursors in range
+[51:07] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[51:09] RT window set to 2.45432
+[51:09] Recommended MS1 mass accuracy setting: 6 ppm
+[51:10] Main search
+[51:16] Removing low confidence identifications
+[51:23] Removing interfering precursors
+[51:23] Training neural networks on 63964 target and 39281 decoy PSMs
+[51:50] Number of IDs at 0.01 FDR: 74384
+[51:50] Calculating protein q-values
+[51:50] Number of genes identified at 1% FDR: 4611 (precursor-level), 4552 (protein-level) (inference performed using proteotypic peptides only)
+[51:50] Quantification
+[51:51] Precursors with scored PTMs at 1% FDR: 6661 out of 6661 considered
+[51:51] Precursors with all scored PTM sites unoccupied at 1% FDR: 67723
+[51:51] Precursors with PTMs localised (when required) with > 90% confidence: 6413 out of 6661
+[51:53] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14653_MB057_ArgSer_06_Proteome_DIA.mzML.quant
+
+[51:53] File #23/24
+[51:53] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14654_MB057_Ctrl_06_Proteome_DIA.mzML
+[53:23] Pre-processing...
+[53:26] 2978 MS1 and 178680 MS2 scans in 2978 (inferred) and 1489 (encoded) cycles, 96302 precursors in range
+[53:26] Calibrating with mass accuracies 25 (MS1), 22 (MS2)
+[53:28] RT window set to 2.40607
+[53:28] Recommended MS1 mass accuracy setting: 6 ppm
+[53:29] Main search
+[53:35] Removing low confidence identifications
+[53:42] Removing interfering precursors
+[53:42] Training neural networks on 63019 target and 38954 decoy PSMs
+[54:09] Number of IDs at 0.01 FDR: 71459
+[54:10] Calculating protein q-values
+[54:10] Number of genes identified at 1% FDR: 4596 (precursor-level), 4510 (protein-level) (inference performed using proteotypic peptides only)
+[54:10] Quantification
+[54:11] Precursors with scored PTMs at 1% FDR: 6783 out of 6783 considered
+[54:11] Precursors with all scored PTM sites unoccupied at 1% FDR: 64676
+[54:11] Precursors with PTMs localised (when required) with > 90% confidence: 6548 out of 6783
+[54:12] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14654_MB057_Ctrl_06_Proteome_DIA.mzML.quant
+
+[54:12] File #24/24
+[54:12] Loading run F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14655_MB057_ProAla_06_Proteome_DIA.mzML
+[55:45] Pre-processing...
+[55:48] 2986 MS1 and 179160 MS2 scans in 2986 (inferred) and 1493 (encoded) cycles, 96302 precursors in range
+[55:48] Calibrating with mass accuracies 25 (MS1), 24 (MS2)
+[55:51] RT window set to 2.41831
+[55:51] Recommended MS1 mass accuracy setting: 6 ppm
+[55:52] Main search
+[55:59] Removing low confidence identifications
+[56:05] Removing interfering precursors
+[56:06] Training neural networks on 63655 target and 39601 decoy PSMs
+[56:33] Number of IDs at 0.01 FDR: 73628
+[56:34] Calculating protein q-values
+[56:34] Number of genes identified at 1% FDR: 4607 (precursor-level), 4544 (protein-level) (inference performed using proteotypic peptides only)
+[56:34] Quantification
+[56:35] Precursors with scored PTMs at 1% FDR: 6849 out of 6849 considered
+[56:35] Precursors with all scored PTM sites unoccupied at 1% FDR: 66779
+[56:35] Precursors with PTMs localised (when required) with > 90% confidence: 6609 out of 6849
+[56:36] Quantification information saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\mzml\e14655_MB057_ProAla_06_Proteome_DIA.mzML.quant
+
+[56:36] Cross-run analysis
+[56:36] Reading quantification information: 24 files
+[56:40] Quantifying peptides
+[64:39] Quantification parameters: 0.325709, 0.000798201, 0.0244943, 0.0114721, 0.0147678, 0.0130623, 0.352012, 0.0605826, 0.101377, 0.0123106, 0.0357189, 0.0143729, 0.350119, 0.0552599, 0.0746814, 0.038953
+[66:36] Assembling protein groups
+[66:36] Quantifying proteins
+[66:37] Calculating q-values for protein and gene groups
+[66:37] Calculating global q-values for protein and gene groups
+[66:37] Protein groups with global q-value <= 0.01: 4740
+[67:01] Compressed report saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.parquet. Use R 'arrow' or Python 'PyArrow' package to process
+[67:01] Saving precursor levels matrix
+[67:02] Precursor levels matrix (1% precursor and protein group FDR) saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.pr_matrix.tsv.
+[67:02] Saving protein group levels matrix
+[67:02] Protein groups matrix saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.pg_matrix.tsv.
+[67:02] Saving gene group levels matrix
+[67:02] Gene groups matrix saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.gg_matrix.tsv.
+[67:02] Saving unique genes levels matrix
+[67:03] Unique genes matrix saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.unique_genes_matrix.tsv.
+[67:03] Manifest saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.manifest.txt
+[67:03] Stats report saved to F:\MB057_MistranslatingOmics\202408_WholeProteome\20250425_DIANN_21\report.stats.tsv
+

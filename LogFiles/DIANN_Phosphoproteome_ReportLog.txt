@@ -1,0 +1,648 @@
+
+DIA-NN 2.1.0 Academia  (Data-Independent Acquisition by Neural Networks)
+Compiled on Mar 25 2025 10:59:54
+Current date and time: Sun Apr 27 14:00:55 2025
+CPU: AuthenticAMD AMD Ryzen 9 5950X 16-Core Processor
+SIMD instructions: AVX AVX2 FMA SSE4.1 SSE4.2 SSE4a 
+Logical CPU cores: 32
+diann.exe --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14486_MB057_Ctrl_01_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14487_MB057_ProSer_01_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14488_MB057_ArgSer_01_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14489_MB057_ProAla_01_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14491_MB057_ArgSer_02_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14492_MB057_ProSer_02_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14493_MB057_ProAla_02_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14494_MB057_Ctrl_02_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14496_MB057_ProSer_03_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14497_MB057_Ctrl_03_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14498_MB057_ArgSer_03_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14499_MB057_ProAla_03_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14501_MB057_Ctrl_04_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14502_MB057_ProAla_04_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14503_MB057_ArgSer_04_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14504_MB057_ProSer_04_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14506_MB057_ProAla_05_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14507_MB057_Ctrl_05_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14508_MB057_ProSer_05_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14509_MB057_ArgSer_05_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14511_MB057_ProSer_06_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14512_MB057_ArgSer_06_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14513_MB057_Ctrl_06_Phospho_DIA.mzML  --f C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14514_MB057_ProAla_06_Phospho_DIA.mzML  --lib E:\Matt\MB057_MistranslationMultiOmics\20240806_Phosphoproteome\library.tsv --threads 16 --verbose 1 --out E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.parquet --qvalue 0.01 --matrices --reannotate --xic --fasta camprotR_240512_cRAP_20190401_full_tags.fasta --cont-quant-exclude cRAP- --fasta E:\Matt\MB057_MistranslationMultiOmics\2024-04-22-decoys-reviewed-contam-UP000002311.fas --met-excision --min-pep-len 7 --max-pep-len 50 --min-pr-mz 300 --max-pr-mz 1800 --min-pr-charge 1 --max-pr-charge 4 --cut K*,R* --missed-cleavages 2 --unimod4 --var-mods 3 --var-mod UniMod:35,15.994915,M --var-mod UniMod:21,79.966331,STY --peptidoforms --rt-profiling --export-quant 
+
+Thread number set to 16
+Output will be filtered at 0.01 FDR
+Precursor/protein x samples expression level matrices will be saved along with the main report
+Library precursors will be reannotated using the FASTA database
+XICs within 10 seconds from the apex will be extracted for each precursor and saved in .parquet format, a folder will be created next to the main report for the XICs storage
+Peptides corresponding to protein sequence IDs tagged with cRAP- will be excluded from normalisation as well as quantification of protein groups that do not include proteins bearing the tag
+N-terminal methionine excision enabled
+Min peptide length set to 7
+Max peptide length set to 50
+Min precursor m/z set to 300
+Max precursor m/z set to 1800
+Min precursor charge set to 1
+Max precursor charge set to 4
+In silico digest will involve cuts at K*,R*
+Maximum number of missed cleavages set to 2
+Cysteine carbamidomethylation enabled as a fixed modification
+Maximum number of variable modifications set to 3
+Modification UniMod:35 with mass delta 15.9949 at M will be considered as variable
+Modification UniMod:21 with mass delta 79.9663 at STY will be considered as variable
+Peptidoform scoring enabled
+The spectral library (if generated) will retain the original spectra but will include empirically-aligned RTs
+full quantification information will be exported in .parquet format
+DIA-NN will automatically optimise the mass accuracy for the first run of the experiment, use this mode for preliminary analyses only
+The following variable modifications will be localised: UniMod:35 UniMod:21 
+
+24 files will be processed
+[0:00] Loading spectral library E:\Matt\MB057_MistranslationMultiOmics\20240806_Phosphoproteome\library.tsv
+[0:08] Finding proteotypic peptides (assuming that the list of UniProt ids provided for each peptide is complete)
+[0:08] Spectral library loaded: 4110 protein isoforms, 4110 protein groups and 163662 precursors in 129317 elution groups.
+[0:08] Loading FASTA camprotR_240512_cRAP_20190401_full_tags.fasta
+[0:08] Loading FASTA E:\Matt\MB057_MistranslationMultiOmics\2024-04-22-decoys-reviewed-contam-UP000002311.fas
+[0:33] Reannotating library precursors with information from the FASTA database
+[0:33] Finding proteotypic peptides (assuming that the list of UniProt ids provided for each peptide is complete)
+[0:33] 163662 precursors generated
+[0:33] Gene names missing for some isoforms
+[0:33] Library contains 4322 proteins, and 4315 genes
+[0:34] Initialising library
+[0:35] Saving the library to E:\Matt\MB057_MistranslationMultiOmics\20240806_Phosphoproteome\library.tsv.skyline.speclib
+
+[0:36] File #1/24
+[0:36] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14486_MB057_Ctrl_01_Phospho_DIA.mzML
+[0:43] Pre-processing...
+[0:46] 1562 MS1 and 93720 MS2 scans in 1562 (inferred) and 781 (encoded) cycles, 146854 precursors in range
+[0:46] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[0:48] RT window set to 1.67653
+[0:48] Peak width: 3.716
+[0:48] Scan window radius set to 8
+[0:48] Recommended MS1 mass accuracy setting: 6 ppm
+[0:49] Optimised mass accuracy: 10 ppm
+[0:50] Searching decoys
+[0:52] Main search
+[0:56] Removing low confidence identifications
+[1:05] Removing interfering precursors
+[1:06] Training neural networks on 27642 target and 23091 decoy PSMs
+[1:21] Training neural networks on 27642 target and 20469 decoy PSMs
+[1:36] Number of IDs at 0.01 FDR: 32840
+[1:36] Precursors at 1% peptidoform FDR: 27555
+[1:36] Calculating protein q-values
+[1:36] Number of genes identified at 1% FDR: 3136 (precursor-level), 3025 (protein-level) (inference performed using proteotypic peptides only)
+[1:36] Quantification
+[1:37] Precursors with scored PTMs at 1% FDR: 23235 out of 27806 considered
+[1:37] Precursors with all scored PTM sites unoccupied at 1% FDR: 4320
+[1:37] Precursors with PTMs localised (when required) with > 90% confidence: 13191 out of 23235
+[1:37] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14486_MB057_Ctrl_01_Phospho_DIA.mzML.quant
+[1:38] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14486_MB057_Ctrl_01_Phospho_DIA.xic.parquet
+
+[1:38] File #2/24
+[1:38] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14487_MB057_ProSer_01_Phospho_DIA.mzML
+[1:46] Pre-processing...
+[1:49] 1562 MS1 and 93720 MS2 scans in 1562 (inferred) and 781 (encoded) cycles, 146854 precursors in range
+[1:49] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[1:50] RT window set to 1.68856
+[1:50] Recommended MS1 mass accuracy setting: 6 ppm
+[1:51] Searching decoys
+[1:53] Main search
+[1:57] Removing low confidence identifications
+[2:07] Removing interfering precursors
+[2:08] Training neural networks on 28362 target and 24414 decoy PSMs
+[2:24] Training neural networks on 28362 target and 21913 decoy PSMs
+[2:39] Number of IDs at 0.01 FDR: 33115
+[2:40] Precursors at 1% peptidoform FDR: 27339
+[2:40] Calculating protein q-values
+[2:40] Number of genes identified at 1% FDR: 3100 (precursor-level), 3023 (protein-level) (inference performed using proteotypic peptides only)
+[2:40] Quantification
+[2:40] Precursors with scored PTMs at 1% FDR: 24592 out of 29634 considered
+[2:40] Precursors with all scored PTM sites unoccupied at 1% FDR: 2747
+[2:40] Precursors with PTMs localised (when required) with > 90% confidence: 13876 out of 24592
+[2:41] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14487_MB057_ProSer_01_Phospho_DIA.mzML.quant
+[2:42] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14487_MB057_ProSer_01_Phospho_DIA.xic.parquet
+
+[2:42] File #3/24
+[2:42] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14488_MB057_ArgSer_01_Phospho_DIA.mzML
+[2:50] Pre-processing...
+[2:52] 1562 MS1 and 93720 MS2 scans in 1562 (inferred) and 781 (encoded) cycles, 146854 precursors in range
+[2:52] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[2:54] RT window set to 1.6716
+[2:55] Recommended MS1 mass accuracy setting: 6 ppm
+[2:55] Searching decoys
+[2:57] Main search
+[3:02] Removing low confidence identifications
+[3:11] Removing interfering precursors
+[3:12] Training neural networks on 28622 target and 24502 decoy PSMs
+[3:29] Training neural networks on 28622 target and 21975 decoy PSMs
+[3:44] Number of IDs at 0.01 FDR: 33417
+[3:44] Precursors at 1% peptidoform FDR: 27504
+[3:44] Calculating protein q-values
+[3:45] Number of genes identified at 1% FDR: 3092 (precursor-level), 2993 (protein-level) (inference performed using proteotypic peptides only)
+[3:45] Quantification
+[3:45] Precursors with scored PTMs at 1% FDR: 24862 out of 30196 considered
+[3:45] Precursors with all scored PTM sites unoccupied at 1% FDR: 2642
+[3:45] Precursors with PTMs localised (when required) with > 90% confidence: 14090 out of 24862
+[3:46] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14488_MB057_ArgSer_01_Phospho_DIA.mzML.quant
+[3:47] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14488_MB057_ArgSer_01_Phospho_DIA.xic.parquet
+
+[3:47] File #4/24
+[3:47] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14489_MB057_ProAla_01_Phospho_DIA.mzML
+[3:55] Pre-processing...
+[3:57] 1558 MS1 and 93480 MS2 scans in 1558 (inferred) and 779 (encoded) cycles, 146854 precursors in range
+[3:57] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[3:59] RT window set to 1.67773
+[3:59] Recommended MS1 mass accuracy setting: 6 ppm
+[4:00] Searching decoys
+[4:02] Main search
+[4:06] Removing low confidence identifications
+[4:15] Removing interfering precursors
+[4:16] Training neural networks on 28304 target and 24075 decoy PSMs
+[4:32] Training neural networks on 28304 target and 21445 decoy PSMs
+[4:47] Number of IDs at 0.01 FDR: 33122
+[4:48] Precursors at 1% peptidoform FDR: 27525
+[4:48] Calculating protein q-values
+[4:48] Number of genes identified at 1% FDR: 3112 (precursor-level), 3025 (protein-level) (inference performed using proteotypic peptides only)
+[4:48] Quantification
+[4:48] Precursors with scored PTMs at 1% FDR: 24020 out of 28893 considered
+[4:48] Precursors with all scored PTM sites unoccupied at 1% FDR: 3505
+[4:48] Precursors with PTMs localised (when required) with > 90% confidence: 13331 out of 24020
+[4:49] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14489_MB057_ProAla_01_Phospho_DIA.mzML.quant
+[4:50] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14489_MB057_ProAla_01_Phospho_DIA.xic.parquet
+
+[4:50] File #5/24
+[4:50] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14491_MB057_ArgSer_02_Phospho_DIA.mzML
+[4:58] Pre-processing...
+[5:00] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[5:00] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[5:02] RT window set to 1.68455
+[5:02] Recommended MS1 mass accuracy setting: 6 ppm
+[5:03] Searching decoys
+[5:05] Main search
+[5:09] Removing low confidence identifications
+[5:20] Removing interfering precursors
+[5:21] Training neural networks on 28663 target and 24761 decoy PSMs
+[5:37] Training neural networks on 28663 target and 22186 decoy PSMs
+[5:53] Number of IDs at 0.01 FDR: 36177
+[5:53] Precursors at 1% peptidoform FDR: 29353
+[5:53] Calculating protein q-values
+[5:53] Number of genes identified at 1% FDR: 3094 (precursor-level), 3004 (protein-level) (inference performed using proteotypic peptides only)
+[5:53] Quantification
+[5:54] Precursors with scored PTMs at 1% FDR: 26778 out of 32925 considered
+[5:54] Precursors with all scored PTM sites unoccupied at 1% FDR: 2575
+[5:54] Precursors with PTMs localised (when required) with > 90% confidence: 14907 out of 26778
+[5:54] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14491_MB057_ArgSer_02_Phospho_DIA.mzML.quant
+[5:55] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14491_MB057_ArgSer_02_Phospho_DIA.xic.parquet
+
+[5:55] File #6/24
+[5:55] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14492_MB057_ProSer_02_Phospho_DIA.mzML
+[6:04] Pre-processing...
+[6:06] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[6:06] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[6:08] RT window set to 1.68171
+[6:08] Recommended MS1 mass accuracy setting: 6 ppm
+[6:09] Searching decoys
+[6:11] Main search
+[6:15] Removing low confidence identifications
+[6:25] Removing interfering precursors
+[6:26] Training neural networks on 28677 target and 24532 decoy PSMs
+[6:42] Training neural networks on 28677 target and 22084 decoy PSMs
+[6:57] Number of IDs at 0.01 FDR: 34457
+[6:57] Precursors at 1% peptidoform FDR: 28171
+[6:58] Calculating protein q-values
+[6:58] Number of genes identified at 1% FDR: 3093 (precursor-level), 2993 (protein-level) (inference performed using proteotypic peptides only)
+[6:58] Quantification
+[6:58] Precursors with scored PTMs at 1% FDR: 25410 out of 31005 considered
+[6:58] Precursors with all scored PTM sites unoccupied at 1% FDR: 2761
+[6:58] Precursors with PTMs localised (when required) with > 90% confidence: 14474 out of 25410
+[6:59] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14492_MB057_ProSer_02_Phospho_DIA.mzML.quant
+[7:00] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14492_MB057_ProSer_02_Phospho_DIA.xic.parquet
+
+[7:00] File #7/24
+[7:00] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14493_MB057_ProAla_02_Phospho_DIA.mzML
+[7:09] Pre-processing...
+[7:11] 1568 MS1 and 94080 MS2 scans in 1568 (inferred) and 784 (encoded) cycles, 146854 precursors in range
+[7:11] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[7:13] RT window set to 1.68149
+[7:13] Recommended MS1 mass accuracy setting: 6 ppm
+[7:13] Searching decoys
+[7:15] Main search
+[7:20] Removing low confidence identifications
+[7:29] Removing interfering precursors
+[7:30] Training neural networks on 28063 target and 24083 decoy PSMs
+[7:46] Training neural networks on 28063 target and 21507 decoy PSMs
+[8:01] Number of IDs at 0.01 FDR: 31768
+[8:01] Precursors at 1% peptidoform FDR: 26023
+[8:01] Calculating protein q-values
+[8:01] Number of genes identified at 1% FDR: 3043 (precursor-level), 2952 (protein-level) (inference performed using proteotypic peptides only)
+[8:01] Quantification
+[8:02] Precursors with scored PTMs at 1% FDR: 23298 out of 28371 considered
+[8:02] Precursors with all scored PTM sites unoccupied at 1% FDR: 2725
+[8:02] Precursors with PTMs localised (when required) with > 90% confidence: 13010 out of 23298
+[8:03] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14493_MB057_ProAla_02_Phospho_DIA.mzML.quant
+[8:03] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14493_MB057_ProAla_02_Phospho_DIA.xic.parquet
+
+[8:03] File #8/24
+[8:03] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14494_MB057_Ctrl_02_Phospho_DIA.mzML
+[8:13] Pre-processing...
+[8:15] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[8:15] Calibrating with mass accuracies 23 (MS1), 21 (MS2)
+[8:16] RT window set to 1.69905
+[8:16] Recommended MS1 mass accuracy setting: 6 ppm
+[8:17] Searching decoys
+[8:19] Main search
+[8:24] Removing low confidence identifications
+[8:33] Removing interfering precursors
+[8:34] Training neural networks on 28467 target and 24521 decoy PSMs
+[8:51] Training neural networks on 28467 target and 21886 decoy PSMs
+[9:06] Number of IDs at 0.01 FDR: 33055
+[9:06] Precursors at 1% peptidoform FDR: 27353
+[9:06] Calculating protein q-values
+[9:06] Number of genes identified at 1% FDR: 3061 (precursor-level), 2958 (protein-level) (inference performed using proteotypic peptides only)
+[9:06] Quantification
+[9:07] Precursors with scored PTMs at 1% FDR: 24309 out of 29289 considered
+[9:07] Precursors with all scored PTM sites unoccupied at 1% FDR: 3044
+[9:07] Precursors with PTMs localised (when required) with > 90% confidence: 13454 out of 24309
+[9:07] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14494_MB057_Ctrl_02_Phospho_DIA.mzML.quant
+[9:08] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14494_MB057_Ctrl_02_Phospho_DIA.xic.parquet
+
+[9:08] File #9/24
+[9:08] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14496_MB057_ProSer_03_Phospho_DIA.mzML
+[9:17] Pre-processing...
+[9:20] 1568 MS1 and 94080 MS2 scans in 1568 (inferred) and 784 (encoded) cycles, 146854 precursors in range
+[9:20] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[9:21] RT window set to 1.66306
+[9:21] Recommended MS1 mass accuracy setting: 6 ppm
+[9:22] Searching decoys
+[9:24] Main search
+[9:28] Removing low confidence identifications
+[9:38] Removing interfering precursors
+[9:39] Training neural networks on 28056 target and 24221 decoy PSMs
+[9:55] Training neural networks on 28056 target and 21625 decoy PSMs
+[10:10] Number of IDs at 0.01 FDR: 31916
+[10:10] Precursors at 1% peptidoform FDR: 26328
+[10:10] Calculating protein q-values
+[10:10] Number of genes identified at 1% FDR: 3064 (precursor-level), 2981 (protein-level) (inference performed using proteotypic peptides only)
+[10:10] Quantification
+[10:11] Precursors with scored PTMs at 1% FDR: 23594 out of 28545 considered
+[10:11] Precursors with all scored PTM sites unoccupied at 1% FDR: 2734
+[10:11] Precursors with PTMs localised (when required) with > 90% confidence: 13242 out of 23594
+[10:11] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14496_MB057_ProSer_03_Phospho_DIA.mzML.quant
+[10:12] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14496_MB057_ProSer_03_Phospho_DIA.xic.parquet
+
+[10:12] File #10/24
+[10:12] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14497_MB057_Ctrl_03_Phospho_DIA.mzML
+[10:21] Pre-processing...
+[10:23] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[10:23] Calibrating with mass accuracies 23 (MS1), 21 (MS2)
+[10:25] RT window set to 1.69452
+[10:25] Recommended MS1 mass accuracy setting: 6 ppm
+[10:25] Searching decoys
+[10:28] Main search
+[10:32] Removing low confidence identifications
+[10:42] Removing interfering precursors
+[10:43] Training neural networks on 28361 target and 24338 decoy PSMs
+[10:59] Training neural networks on 28361 target and 21948 decoy PSMs
+[11:15] Number of IDs at 0.01 FDR: 34039
+[11:15] Precursors at 1% peptidoform FDR: 28192
+[11:15] Calculating protein q-values
+[11:15] Number of genes identified at 1% FDR: 3062 (precursor-level), 2942 (protein-level) (inference performed using proteotypic peptides only)
+[11:15] Quantification
+[11:15] Precursors with scored PTMs at 1% FDR: 25366 out of 30525 considered
+[11:15] Precursors with all scored PTM sites unoccupied at 1% FDR: 2826
+[11:15] Precursors with PTMs localised (when required) with > 90% confidence: 14168 out of 25366
+[11:16] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14497_MB057_Ctrl_03_Phospho_DIA.mzML.quant
+[11:17] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14497_MB057_Ctrl_03_Phospho_DIA.xic.parquet
+
+[11:17] File #11/24
+[11:17] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14498_MB057_ArgSer_03_Phospho_DIA.mzML
+[11:26] Pre-processing...
+[11:28] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[11:28] Calibrating with mass accuracies 23 (MS1), 21 (MS2)
+[11:30] RT window set to 1.69641
+[11:30] Recommended MS1 mass accuracy setting: 6 ppm
+[11:30] Searching decoys
+[11:32] Main search
+[11:37] Removing low confidence identifications
+[11:46] Removing interfering precursors
+[11:47] Training neural networks on 28567 target and 24447 decoy PSMs
+[12:03] Training neural networks on 28567 target and 21897 decoy PSMs
+[12:18] Number of IDs at 0.01 FDR: 34902
+[12:18] Precursors at 1% peptidoform FDR: 28797
+[12:18] Calculating protein q-values
+[12:18] Number of genes identified at 1% FDR: 3134 (precursor-level), 3007 (protein-level) (inference performed using proteotypic peptides only)
+[12:18] Quantification
+[12:19] Precursors with scored PTMs at 1% FDR: 25268 out of 30568 considered
+[12:19] Precursors with all scored PTM sites unoccupied at 1% FDR: 3529
+[12:19] Precursors with PTMs localised (when required) with > 90% confidence: 14089 out of 25268
+[12:19] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14498_MB057_ArgSer_03_Phospho_DIA.mzML.quant
+[12:20] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14498_MB057_ArgSer_03_Phospho_DIA.xic.parquet
+
+[12:20] File #12/24
+[12:20] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14499_MB057_ProAla_03_Phospho_DIA.mzML
+[12:29] Pre-processing...
+[12:32] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[12:32] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[12:34] RT window set to 1.69002
+[12:34] Recommended MS1 mass accuracy setting: 6 ppm
+[12:35] Searching decoys
+[12:36] Main search
+[12:41] Removing low confidence identifications
+[12:50] Removing interfering precursors
+[12:51] Training neural networks on 27822 target and 23897 decoy PSMs
+[13:06] Training neural networks on 27822 target and 21378 decoy PSMs
+[13:21] Number of IDs at 0.01 FDR: 31360
+[13:21] Precursors at 1% peptidoform FDR: 25482
+[13:21] Calculating protein q-values
+[13:21] Number of genes identified at 1% FDR: 3035 (precursor-level), 2911 (protein-level) (inference performed using proteotypic peptides only)
+[13:21] Quantification
+[13:21] Precursors with scored PTMs at 1% FDR: 22832 out of 28027 considered
+[13:21] Precursors with all scored PTM sites unoccupied at 1% FDR: 2650
+[13:21] Precursors with PTMs localised (when required) with > 90% confidence: 12751 out of 22832
+[13:22] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14499_MB057_ProAla_03_Phospho_DIA.mzML.quant
+[13:23] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14499_MB057_ProAla_03_Phospho_DIA.xic.parquet
+
+[13:23] File #13/24
+[13:23] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14501_MB057_Ctrl_04_Phospho_DIA.mzML
+[13:32] Pre-processing...
+[13:35] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[13:35] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[13:36] RT window set to 1.69279
+[13:36] Recommended MS1 mass accuracy setting: 6 ppm
+[13:37] Searching decoys
+[13:39] Main search
+[13:43] Removing low confidence identifications
+[13:53] Removing interfering precursors
+[13:54] Training neural networks on 28034 target and 24145 decoy PSMs
+[14:09] Training neural networks on 28034 target and 21492 decoy PSMs
+[14:23] Number of IDs at 0.01 FDR: 32750
+[14:23] Precursors at 1% peptidoform FDR: 26812
+[14:23] Calculating protein q-values
+[14:23] Number of genes identified at 1% FDR: 3052 (precursor-level), 2933 (protein-level) (inference performed using proteotypic peptides only)
+[14:23] Quantification
+[14:24] Precursors with scored PTMs at 1% FDR: 24050 out of 29262 considered
+[14:24] Precursors with all scored PTM sites unoccupied at 1% FDR: 2762
+[14:24] Precursors with PTMs localised (when required) with > 90% confidence: 13367 out of 24050
+[14:24] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14501_MB057_Ctrl_04_Phospho_DIA.mzML.quant
+[14:25] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14501_MB057_Ctrl_04_Phospho_DIA.xic.parquet
+
+[14:25] File #14/24
+[14:25] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14502_MB057_ProAla_04_Phospho_DIA.mzML
+[14:34] Pre-processing...
+[14:37] 1568 MS1 and 94080 MS2 scans in 1568 (inferred) and 784 (encoded) cycles, 146854 precursors in range
+[14:37] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[14:38] RT window set to 1.69955
+[14:38] Recommended MS1 mass accuracy setting: 6 ppm
+[14:39] Searching decoys
+[14:41] Main search
+[14:45] Removing low confidence identifications
+[14:55] Removing interfering precursors
+[14:56] Training neural networks on 27965 target and 24099 decoy PSMs
+[15:11] Training neural networks on 27965 target and 21563 decoy PSMs
+[15:26] Number of IDs at 0.01 FDR: 32820
+[15:26] Precursors at 1% peptidoform FDR: 27043
+[15:26] Calculating protein q-values
+[15:26] Number of genes identified at 1% FDR: 3015 (precursor-level), 2892 (protein-level) (inference performed using proteotypic peptides only)
+[15:26] Quantification
+[15:27] Precursors with scored PTMs at 1% FDR: 24617 out of 29759 considered
+[15:27] Precursors with all scored PTM sites unoccupied at 1% FDR: 2426
+[15:27] Precursors with PTMs localised (when required) with > 90% confidence: 13743 out of 24617
+[15:27] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14502_MB057_ProAla_04_Phospho_DIA.mzML.quant
+[15:28] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14502_MB057_ProAla_04_Phospho_DIA.xic.parquet
+
+[15:28] File #15/24
+[15:28] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14503_MB057_ArgSer_04_Phospho_DIA.mzML
+[15:37] Pre-processing...
+[15:40] 1572 MS1 and 94320 MS2 scans in 1572 (inferred) and 786 (encoded) cycles, 146854 precursors in range
+[15:40] Calibrating with mass accuracies 23 (MS1), 21 (MS2)
+[15:41] RT window set to 1.69093
+[15:41] Recommended MS1 mass accuracy setting: 6 ppm
+[15:42] Searching decoys
+[15:44] Main search
+[15:48] Removing low confidence identifications
+[15:58] Removing interfering precursors
+[15:59] Training neural networks on 28372 target and 24327 decoy PSMs
+[16:15] Training neural networks on 28372 target and 21920 decoy PSMs
+[16:30] Number of IDs at 0.01 FDR: 33379
+[16:30] Precursors at 1% peptidoform FDR: 27564
+[16:30] Calculating protein q-values
+[16:30] Number of genes identified at 1% FDR: 3062 (precursor-level), 2984 (protein-level) (inference performed using proteotypic peptides only)
+[16:30] Quantification
+[16:30] Precursors with scored PTMs at 1% FDR: 24815 out of 29894 considered
+[16:30] Precursors with all scored PTM sites unoccupied at 1% FDR: 2749
+[16:30] Precursors with PTMs localised (when required) with > 90% confidence: 13846 out of 24815
+[16:31] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14503_MB057_ArgSer_04_Phospho_DIA.mzML.quant
+[16:32] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14503_MB057_ArgSer_04_Phospho_DIA.xic.parquet
+
+[16:32] File #16/24
+[16:32] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14504_MB057_ProSer_04_Phospho_DIA.mzML
+[16:41] Pre-processing...
+[16:43] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[16:43] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[16:44] RT window set to 1.68941
+[16:45] Recommended MS1 mass accuracy setting: 6 ppm
+[16:45] Searching decoys
+[16:47] Main search
+[16:52] Removing low confidence identifications
+[17:01] Removing interfering precursors
+[17:02] Training neural networks on 28443 target and 24287 decoy PSMs
+[17:18] Training neural networks on 28443 target and 21880 decoy PSMs
+[17:33] Number of IDs at 0.01 FDR: 33437
+[17:33] Precursors at 1% peptidoform FDR: 27290
+[17:33] Calculating protein q-values
+[17:33] Number of genes identified at 1% FDR: 3071 (precursor-level), 2961 (protein-level) (inference performed using proteotypic peptides only)
+[17:33] Quantification
+[17:34] Precursors with scored PTMs at 1% FDR: 24585 out of 29982 considered
+[17:34] Precursors with all scored PTM sites unoccupied at 1% FDR: 2705
+[17:34] Precursors with PTMs localised (when required) with > 90% confidence: 13731 out of 24585
+[17:34] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14504_MB057_ProSer_04_Phospho_DIA.mzML.quant
+[17:35] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14504_MB057_ProSer_04_Phospho_DIA.xic.parquet
+
+[17:35] File #17/24
+[17:35] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14506_MB057_ProAla_05_Phospho_DIA.mzML
+[17:44] Pre-processing...
+[17:47] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[17:47] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[17:48] RT window set to 1.70443
+[17:48] Recommended MS1 mass accuracy setting: 6 ppm
+[17:49] Searching decoys
+[17:51] Main search
+[17:55] Removing low confidence identifications
+[18:05] Removing interfering precursors
+[18:06] Training neural networks on 28456 target and 24223 decoy PSMs
+[18:22] Training neural networks on 28456 target and 21705 decoy PSMs
+[18:37] Number of IDs at 0.01 FDR: 33611
+[18:37] Precursors at 1% peptidoform FDR: 27569
+[18:37] Calculating protein q-values
+[18:37] Number of genes identified at 1% FDR: 3072 (precursor-level), 2988 (protein-level) (inference performed using proteotypic peptides only)
+[18:37] Quantification
+[18:37] Precursors with scored PTMs at 1% FDR: 24450 out of 29693 considered
+[18:37] Precursors with all scored PTM sites unoccupied at 1% FDR: 3119
+[18:37] Precursors with PTMs localised (when required) with > 90% confidence: 13578 out of 24450
+[18:38] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14506_MB057_ProAla_05_Phospho_DIA.mzML.quant
+[18:39] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14506_MB057_ProAla_05_Phospho_DIA.xic.parquet
+
+[18:39] File #18/24
+[18:39] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14507_MB057_Ctrl_05_Phospho_DIA.mzML
+[18:47] Pre-processing...
+[18:50] 1562 MS1 and 93720 MS2 scans in 1562 (inferred) and 781 (encoded) cycles, 146854 precursors in range
+[18:50] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[18:51] RT window set to 1.69125
+[18:51] Recommended MS1 mass accuracy setting: 6 ppm
+[18:52] Searching decoys
+[18:54] Main search
+[18:58] Removing low confidence identifications
+[19:08] Removing interfering precursors
+[19:08] Training neural networks on 28416 target and 24252 decoy PSMs
+[19:24] Training neural networks on 28416 target and 21826 decoy PSMs
+[19:39] Number of IDs at 0.01 FDR: 33953
+[19:40] Precursors at 1% peptidoform FDR: 27974
+[19:40] Calculating protein q-values
+[19:40] Number of genes identified at 1% FDR: 3160 (precursor-level), 3050 (protein-level) (inference performed using proteotypic peptides only)
+[19:40] Quantification
+[19:40] Precursors with scored PTMs at 1% FDR: 24306 out of 29568 considered
+[19:40] Precursors with all scored PTM sites unoccupied at 1% FDR: 3668
+[19:40] Precursors with PTMs localised (when required) with > 90% confidence: 13780 out of 24306
+[19:41] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14507_MB057_Ctrl_05_Phospho_DIA.mzML.quant
+[19:42] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14507_MB057_Ctrl_05_Phospho_DIA.xic.parquet
+
+[19:42] File #19/24
+[19:42] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14508_MB057_ProSer_05_Phospho_DIA.mzML
+[19:50] Pre-processing...
+[19:53] 1572 MS1 and 94320 MS2 scans in 1572 (inferred) and 786 (encoded) cycles, 146854 precursors in range
+[19:53] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[19:54] RT window set to 1.68895
+[19:54] Recommended MS1 mass accuracy setting: 6 ppm
+[19:55] Searching decoys
+[19:57] Main search
+[20:02] Removing low confidence identifications
+[20:12] Removing interfering precursors
+[20:13] Training neural networks on 28409 target and 24501 decoy PSMs
+[20:29] Training neural networks on 28409 target and 22085 decoy PSMs
+[20:44] Number of IDs at 0.01 FDR: 34326
+[20:44] Precursors at 1% peptidoform FDR: 28063
+[20:44] Calculating protein q-values
+[20:44] Number of genes identified at 1% FDR: 3082 (precursor-level), 2950 (protein-level) (inference performed using proteotypic peptides only)
+[20:44] Quantification
+[20:45] Precursors with scored PTMs at 1% FDR: 25604 out of 31155 considered
+[20:45] Precursors with all scored PTM sites unoccupied at 1% FDR: 2459
+[20:45] Precursors with PTMs localised (when required) with > 90% confidence: 14408 out of 25604
+[20:45] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14508_MB057_ProSer_05_Phospho_DIA.mzML.quant
+[20:46] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14508_MB057_ProSer_05_Phospho_DIA.xic.parquet
+
+[20:46] File #20/24
+[20:46] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14509_MB057_ArgSer_05_Phospho_DIA.mzML
+[20:55] Pre-processing...
+[20:57] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[20:57] Calibrating with mass accuracies 23 (MS1), 21 (MS2)
+[20:59] RT window set to 1.7025
+[20:59] Recommended MS1 mass accuracy setting: 6 ppm
+[21:00] Searching decoys
+[21:02] Main search
+[21:06] Removing low confidence identifications
+[21:16] Removing interfering precursors
+[21:17] Training neural networks on 28790 target and 24610 decoy PSMs
+[21:33] Training neural networks on 28790 target and 22148 decoy PSMs
+[21:48] Number of IDs at 0.01 FDR: 34115
+[21:49] Precursors at 1% peptidoform FDR: 28351
+[21:49] Calculating protein q-values
+[21:49] Number of genes identified at 1% FDR: 3104 (precursor-level), 3009 (protein-level) (inference performed using proteotypic peptides only)
+[21:49] Quantification
+[21:49] Precursors with scored PTMs at 1% FDR: 25311 out of 30431 considered
+[21:49] Precursors with all scored PTM sites unoccupied at 1% FDR: 3040
+[21:49] Precursors with PTMs localised (when required) with > 90% confidence: 14051 out of 25311
+[21:50] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14509_MB057_ArgSer_05_Phospho_DIA.mzML.quant
+[21:51] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14509_MB057_ArgSer_05_Phospho_DIA.xic.parquet
+
+[21:51] File #21/24
+[21:51] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14511_MB057_ProSer_06_Phospho_DIA.mzML
+[21:59] Pre-processing...
+[22:02] 1564 MS1 and 93840 MS2 scans in 1564 (inferred) and 782 (encoded) cycles, 146854 precursors in range
+[22:02] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[22:04] RT window set to 1.69912
+[22:04] Recommended MS1 mass accuracy setting: 6 ppm
+[22:05] Searching decoys
+[22:07] Main search
+[22:11] Removing low confidence identifications
+[22:20] Removing interfering precursors
+[22:21] Training neural networks on 28347 target and 24233 decoy PSMs
+[22:38] Training neural networks on 28347 target and 21942 decoy PSMs
+[22:53] Number of IDs at 0.01 FDR: 33100
+[22:53] Precursors at 1% peptidoform FDR: 27193
+[22:53] Calculating protein q-values
+[22:53] Number of genes identified at 1% FDR: 3075 (precursor-level), 2985 (protein-level) (inference performed using proteotypic peptides only)
+[22:53] Quantification
+[22:53] Precursors with scored PTMs at 1% FDR: 24896 out of 30175 considered
+[22:53] Precursors with all scored PTM sites unoccupied at 1% FDR: 2297
+[22:53] Precursors with PTMs localised (when required) with > 90% confidence: 13875 out of 24896
+[22:54] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14511_MB057_ProSer_06_Phospho_DIA.mzML.quant
+[22:55] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14511_MB057_ProSer_06_Phospho_DIA.xic.parquet
+
+[22:55] File #22/24
+[22:55] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14512_MB057_ArgSer_06_Phospho_DIA.mzML
+[23:03] Pre-processing...
+[23:06] 1562 MS1 and 93720 MS2 scans in 1562 (inferred) and 781 (encoded) cycles, 146854 precursors in range
+[23:06] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[23:07] RT window set to 1.68534
+[23:07] Recommended MS1 mass accuracy setting: 6 ppm
+[23:08] Searching decoys
+[23:10] Main search
+[23:14] Removing low confidence identifications
+[23:24] Removing interfering precursors
+[23:25] Training neural networks on 29312 target and 24703 decoy PSMs
+[23:41] Training neural networks on 29312 target and 22084 decoy PSMs
+[23:56] Number of IDs at 0.01 FDR: 35905
+[23:56] Precursors at 1% peptidoform FDR: 29933
+[23:57] Calculating protein q-values
+[23:57] Number of genes identified at 1% FDR: 3285 (precursor-level), 3230 (protein-level) (inference performed using proteotypic peptides only)
+[23:57] Quantification
+[23:57] Precursors with scored PTMs at 1% FDR: 23748 out of 29055 considered
+[23:57] Precursors with all scored PTM sites unoccupied at 1% FDR: 6185
+[23:57] Precursors with PTMs localised (when required) with > 90% confidence: 13074 out of 23748
+[23:58] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14512_MB057_ArgSer_06_Phospho_DIA.mzML.quant
+[23:59] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14512_MB057_ArgSer_06_Phospho_DIA.xic.parquet
+
+[23:59] File #23/24
+[23:59] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14513_MB057_Ctrl_06_Phospho_DIA.mzML
+[24:07] Pre-processing...
+[24:10] 1568 MS1 and 94080 MS2 scans in 1568 (inferred) and 784 (encoded) cycles, 146854 precursors in range
+[24:10] Calibrating with mass accuracies 22 (MS1), 21 (MS2)
+[24:12] RT window set to 1.69854
+[24:12] Recommended MS1 mass accuracy setting: 6 ppm
+[24:13] Searching decoys
+[24:15] Main search
+[24:19] Removing low confidence identifications
+[24:29] Removing interfering precursors
+[24:30] Training neural networks on 28332 target and 24286 decoy PSMs
+[24:46] Training neural networks on 28332 target and 22021 decoy PSMs
+[25:02] Number of IDs at 0.01 FDR: 33455
+[25:02] Precursors at 1% peptidoform FDR: 27687
+[25:02] Calculating protein q-values
+[25:02] Number of genes identified at 1% FDR: 3040 (precursor-level), 2957 (protein-level) (inference performed using proteotypic peptides only)
+[25:02] Quantification
+[25:02] Precursors with scored PTMs at 1% FDR: 25222 out of 30358 considered
+[25:02] Precursors with all scored PTM sites unoccupied at 1% FDR: 2465
+[25:02] Precursors with PTMs localised (when required) with > 90% confidence: 14065 out of 25222
+[25:03] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14513_MB057_Ctrl_06_Phospho_DIA.mzML.quant
+[25:04] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14513_MB057_Ctrl_06_Phospho_DIA.xic.parquet
+
+[25:04] File #24/24
+[25:04] Loading run C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14514_MB057_ProAla_06_Phospho_DIA.mzML
+[25:13] Pre-processing...
+[25:15] 1570 MS1 and 94200 MS2 scans in 1570 (inferred) and 785 (encoded) cycles, 146854 precursors in range
+[25:15] Calibrating with mass accuracies 23 (MS1), 21 (MS2)
+[25:17] RT window set to 1.69896
+[25:17] Recommended MS1 mass accuracy setting: 6 ppm
+[25:17] Searching decoys
+[25:19] Main search
+[25:24] Removing low confidence identifications
+[25:34] Removing interfering precursors
+[25:35] Training neural networks on 29231 target and 24821 decoy PSMs
+[25:51] Training neural networks on 29231 target and 22309 decoy PSMs
+[26:07] Number of IDs at 0.01 FDR: 36073
+[26:07] Precursors at 1% peptidoform FDR: 29665
+[26:07] Calculating protein q-values
+[26:07] Number of genes identified at 1% FDR: 3157 (precursor-level), 3047 (protein-level) (inference performed using proteotypic peptides only)
+[26:07] Quantification
+[26:08] Precursors with scored PTMs at 1% FDR: 25161 out of 30789 considered
+[26:08] Precursors with all scored PTM sites unoccupied at 1% FDR: 4504
+[26:08] Precursors with PTMs localised (when required) with > 90% confidence: 14011 out of 25161
+[26:08] Quantification information saved to C:\Users\VillenLab\Desktop\DeepYeastPhospho\PhosphoRuns\e14514_MB057_ProAla_06_Phospho_DIA.mzML.quant
+[26:09] XICs saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21/report_xic/e14514_MB057_ProAla_06_Phospho_DIA.xic.parquet
+
+[26:09] Cross-run analysis
+[26:09] Reading quantification information: 24 files
+[26:12] Quantifying peptides
+[29:30] Quantification parameters: 0.292345, 0.00128444, 0.00745714, 0.010275, 0.0129174, 0.0153188, 0.333506, 0.122844, 0.204621, 0.0175685, 0.0181452, 0.0141061, 0.435207, 0.0595765, 0.0942251, 0.0848167
+[30:17] Assembling protein groups
+[30:17] Quantifying proteins
+[30:18] Calculating q-values for protein and gene groups
+[30:18] Calculating global q-values for protein and gene groups
+[30:18] Protein groups with global q-value <= 0.01: 3400
+[30:29] Compressed report saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.parquet. Use R 'arrow' or Python 'PyArrow' package to process
+[30:29] Saving precursor levels matrix
+[30:29] Precursor levels matrix (1% precursor and protein group FDR) saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.pr_matrix.tsv.
+[30:29] Saving protein group levels matrix
+[30:29] Protein groups matrix saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.pg_matrix.tsv.
+[30:29] Saving gene group levels matrix
+[30:30] Gene groups matrix saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.gg_matrix.tsv.
+[30:30] Saving unique genes levels matrix
+[30:30] Unique genes matrix saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.unique_genes_matrix.tsv.
+[30:30] Manifest saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.manifest.txt
+[30:30] Stats report saved to E:\Matt\MB057_MistranslationMultiOmics\20250425_Phosphoproteome_Diann21\report.stats.tsv
+
