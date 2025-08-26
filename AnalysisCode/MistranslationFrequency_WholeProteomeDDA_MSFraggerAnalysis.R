@@ -389,22 +389,7 @@ ggsave("PercentMistranslationVSRelativeGrowth.pdf", device = cairo_pdf, width = 
 
 ## Determine the number of mistranslated peptides observed for each codon (For Figure S1)
 # Filter for peptides containing only one mistranslation event (because of localization issues)
-ProAla.UniqueCodon <- WholeProteome.DDA.Tidy.Filter %>%
-  mutate(NumPro = str_count(Peptide.Sequence, "P")) %>%
-  filter(NumMuts == 0 | NumMuts == 1) %>%
-  filter(Sample == "Ctrl" | Sample == "ProAla") %>%
-  filter(NumPro == 1) %>%
-  filter(Mapped.Genes == "") %>%
-  filter(ProSer.Count == 0) %>%
-  filter(ArgSer.Count == 0) %>%
-  select(Peptide.Sequence, Start, End, Gene) %>%
-  unique() %>%
-  mutate(ProlinePosition = str_locate(Peptide.Sequence, "P")[,"start"],
-         ProteinPosition = (Start + ProlinePosition - 1),
-         CDSStart = (ProteinPosition*3)-2) %>%
-  rowwise() %>%
-  mutate(codon = extract_codon_for_proline(cur_data(), YeastCDSFASTA))
-  
+
 # Read in yeast FASTA file
 YeastCDSFASTA <- readDNAStringSet("202411_SGD_orf_coding.fasta")
 headers <- names(YeastCDSFASTA)
@@ -438,6 +423,23 @@ extract_codon_for_proline <- function(row, YeastCDSFASTA) {
   codon <- substr(gene_sequence, proline_cds_start, proline_cds_end)
   return(codon)
 }
+
+ProAla.UniqueCodon <- WholeProteome.DDA.Tidy.Filter %>%
+  mutate(NumPro = str_count(Peptide.Sequence, "P")) %>%
+  filter(NumMuts == 0 | NumMuts == 1) %>%
+  filter(Sample == "Ctrl" | Sample == "ProAla") %>%
+  filter(NumPro == 1) %>%
+  filter(Mapped.Genes == "") %>%
+  filter(ProSer.Count == 0) %>%
+  filter(ArgSer.Count == 0) %>%
+  select(Peptide.Sequence, Start, End, Gene) %>%
+  unique() %>%
+  mutate(ProlinePosition = str_locate(Peptide.Sequence, "P")[,"start"],
+         ProteinPosition = (Start + ProlinePosition - 1),
+         CDSStart = (ProteinPosition*3)-2) %>%
+  rowwise() %>%
+  mutate(codon = extract_codon_for_proline(cur_data(), YeastCDSFASTA))
+
 
 ProAla.Codon <- WholeProteome.DDA.Tidy.Filter %>%
   mutate(NumPro = str_count(Peptide.Sequence, "P")) %>%
@@ -510,12 +512,6 @@ ProSer.UniqueCodon <- WholeProteome.DDA.Tidy.Filter %>%
   rowwise() %>%
   mutate(codon = extract_codon_for_proline(cur_data(), YeastCDSFASTA))
 
-# Read in yeast FASTA file
-YeastCDSFASTA <- readDNAStringSet("202411_SGD_orf_coding.fasta")
-headers <- names(YeastCDSFASTA)
-gene_names <- str_extract(headers, "(?<= )[A-Z0-9]+")
-names(YeastCDSFASTA) <- gene_names
-
 ProSer.Codon <- WholeProteome.DDA.Tidy.Filter %>%
   mutate(NumPro = str_count(Peptide.Sequence, "P")) %>%
   filter(NumMuts == 0 | NumMuts == 1) %>%
@@ -576,27 +572,6 @@ t.test(PercentMistranslation ~ Sample, data = PtoS.PercentMistranslation %>% fil
 t.test(PercentMistranslation ~ Sample, data = PtoS.PercentMistranslation %>% filter(codon == "CCT"), var.equal = TRUE) # < 4.539e-14
 
 # Arg->Ser
-ArgSer.UniqueCodon <- WholeProteome.DDA.Tidy.Filter %>%
-  mutate(NumArg = str_count(Peptide.Sequence, "R")) %>%
-  filter(NumMuts == 0 | NumMuts == 1) %>%
-  filter(Sample == "Ctrl" | Sample == "ArgSer") %>%
-  filter(NumArg == 1) %>%
-  filter(Mapped.Genes == "") %>%
-  filter(ProAla.Count == 0) %>%
-  filter(ProSer.Count == 0) %>%
-  select(Peptide.Sequence, Start, End, Gene) %>%
-  unique() %>%
-  mutate(ArgininePosition = str_locate(Peptide.Sequence, "R")[,"start"],
-         ProteinPosition = (Start + ArgininePosition - 1),
-         CDSStart = (ProteinPosition*3)-2) %>%
-  rowwise() %>%
-  mutate(codon = extract_codon_for_arginine(cur_data(), YeastCDSFASTA))
-
-# Read in yeast FASTA file
-YeastCDSFASTA <- readDNAStringSet("202411_SGD_orf_coding.fasta")
-headers <- names(YeastCDSFASTA)
-gene_names <- str_extract(headers, "(?<= )[A-Z0-9]+")
-names(YeastCDSFASTA) <- gene_names
 
 # Function to extract codon identities for arginine residues
 extract_codon_for_arginine <- function(row, YeastCDSFASTA) {
@@ -625,6 +600,22 @@ extract_codon_for_arginine <- function(row, YeastCDSFASTA) {
   codon <- substr(gene_sequence, arginine_cds_start, arginine_cds_end)
   return(codon)
 }
+
+ArgSer.UniqueCodon <- WholeProteome.DDA.Tidy.Filter %>%
+  mutate(NumArg = str_count(Peptide.Sequence, "R")) %>%
+  filter(NumMuts == 0 | NumMuts == 1) %>%
+  filter(Sample == "Ctrl" | Sample == "ArgSer") %>%
+  filter(NumArg == 1) %>%
+  filter(Mapped.Genes == "") %>%
+  filter(ProAla.Count == 0) %>%
+  filter(ProSer.Count == 0) %>%
+  select(Peptide.Sequence, Start, End, Gene) %>%
+  unique() %>%
+  mutate(ArgininePosition = str_locate(Peptide.Sequence, "R")[,"start"],
+         ProteinPosition = (Start + ArgininePosition - 1),
+         CDSStart = (ProteinPosition*3)-2) %>%
+  rowwise() %>%
+  mutate(codon = extract_codon_for_arginine(cur_data(), YeastCDSFASTA))
 
 ArgSer.Codon <- WholeProteome.DDA.Tidy.Filter %>%
   mutate(NumArg = str_count(Peptide.Sequence, "R")) %>%
