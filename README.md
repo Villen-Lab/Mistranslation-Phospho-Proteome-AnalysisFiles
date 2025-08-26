@@ -1,6 +1,6 @@
 # Analysis of yeast proteome and phosphoproteome in response to mistranslation
 
-This repository contains outputs and data analysis scripts to accompany analysis of the proteome and phosphoproteome response to mistranslating tRNAs. The folders contain the following:
+This repository contains outputs and data analysis scripts to accompany analysis of the proteome and phosphoproteome response to mistranslating tRNAs. The raw mass spectrometry proteomics data have been deposited to the ProteomeXchange Consortium via the PRIDE partner repository with the dataset identifiers XXX. The folders in this repository contain the following:
 
 **LogFiles:** Log files produced when analyzing the raw files with either FragPipe or DIA-NN containing the parameters used.
 
@@ -8,4 +8,6 @@ This repository contains outputs and data analysis scripts to accompany analysis
 
 **SearchOutputs:** Output files of either FragPipe (for DDA analysis of mistranslation frequency and new phosphosites) or DIA-NN (for DIA analysis of proteome and phosphoproteome samples) that are further analyzed in the R scripts containing in the AnalysisCode folder.
 
-The raw mass spectrometry proteomics data have been deposited to the ProteomeXchange Consortium via the PRIDE partner repository with the dataset identifiers XXX.
+**AnalysisCode:** R scripts used to analyze the DIA-NN and FragPipe outputs and create the figures presented in the manuscript. Also contains additional input files (e.g. yeast kinase-substrate data) required for some of the analyses.
+
+
