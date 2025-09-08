@@ -373,7 +373,7 @@ ProAla.Dn <- Proteome.DA %>%
 AffectedProteins <- Proteome.DA %>% filter(adj.pvalue <= 0.05) %>% filter(log2FC > 0.6 | log2FC < -0.6)
 length(unique(AffectedProteins$Protein)) # 316 proteins
 
-## Make individual plots of different groups of protein quality control proteins (Figure 4A)
+## Make individual plots of different groups of protein quality control proteins (Figure 3C)
 # Heat shock and chaperone proteins
 # Hsp70 proteins
 Hsp70.proteins <- c("SSA1", "SSA2", "SSA3", "SSA4", "SSB1", "SSB2", "SSE1", "SSE2", "SSZ1", "KAR2", "LHS1", "SSC1", "SSQ1", "ECM10")
@@ -402,7 +402,7 @@ ggplot(Hsp70.proteins.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) 
   labs(fill = expression(Log[2] * "(Fold-change)")) +
   ggtitle("Hsp70s")
 
-ggsave("../FINAL_Figures/Figure4/Hsp70Abundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
+ggsave("../FINAL_Figures/Figure3/Hsp70Abundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
 
 # Hsp40s
 Hsp40.proteins <- c("YDJ1", "XDJ1", "APJ1", "SIS1", "DJP1", "ZUO1", "SWA2", "JJJ1", "JJJ2", "JJJ3", "CAJ1", "CWC23", "MDJ1", "MDJ2", "PAM18", "JAC1", "JID1", "SCJ1", "HLJ1", "JEM1", "SEC63", "ERJ5")
@@ -431,7 +431,7 @@ ggplot(Hsp40.proteins.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) 
   labs(fill = expression(Log[2] * "(Fold-change)")) +
   ggtitle("Hsp40s")
 
-ggsave("../FINAL_Figures/Figure4/Hsp40Abundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
+ggsave("../FINAL_Figures/Figure3/Hsp40Abundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
 
 # Hsp90s
 Hsp90.proteins <- c("HSP82", "HSC82", "STI1", "CDC37", "CNS1", "SBA1", "CPR6", "CPR7", "HCH1", "AHA1")
@@ -460,7 +460,7 @@ ggplot(Hsp90.proteins.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) 
   labs(fill = expression(Log[2] * "(Fold-change)")) +
   ggtitle("Hsp90s")
 
-ggsave("../FINAL_Figures/Figure4/Hsp90Abundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
+ggsave("../FINAL_Figures/Figure3/Hsp90Abundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
 
 # Other heatshock
 Other.proteins <- c("HSP104", "HSP42", "HSP26")
@@ -489,9 +489,9 @@ ggplot(Other.proteins.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) 
   labs(fill = expression(Log[2] * "(Fold-change)")) +
   ggtitle("Other heat shock proteins")
 
-ggsave("../FINAL_Figures/Figure4/OtherHeatShockAbundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
+ggsave("../FINAL_Figures/Figure3/OtherHeatShockAbundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
 
-# Make plot to show abundance change of proteoasome subunits across all three mistranslating strains (Figure S3A)
+# Make plot to show abundance change of proteoasome subunits across all three mistranslating strains (Figure S2A)
 Proteasome.proteins <- c("PRE1", "PRE2", "PRE3", "PRE4", "PRE5", "PRE6", "PRE7", "PRE8", "PRE9", "PRE10", "PUP1", "PUP2", "PUP3", "RPN1", "RPN2", "RPN3", "RPN5", "RPN6", "RPN7", "RPN8", "RPN9", "RPN10", "RPN11", "RPN12", "RPN13", "RPT1", "RPT2", "RPT3", "RPT4", "RPT5", "RPT6", "SCL1", "SEM1")
 
 Proteasome.FC <- data.frame(Proteome.DA) %>%
@@ -528,9 +528,9 @@ ggplot(Proteasome.FC, aes(x = Mistranslation, y = log2FC, fill = Mistranslation)
   theme(legend.position = "none") +
   ggtitle("Proteasome Subunits")
 
-ggsave("../FINAL_Figures/FigureS3/ProteasomeAbundance.pdf", device = cairo_pdf, units = "in", width = 3, height = 4)
+ggsave("../FINAL_Figures/FigureS2/ProteasomeAbundance.pdf", device = cairo_pdf, units = "in", width = 3, height = 4)
 
-# Make plot to show abundance change of autophagy proteins across all three mistranslating strains (Figure S3B)
+# Make plot to show abundance change of autophagy proteins across all three mistranslating strains (Figure S2B)
 Autophagy.proteins <- c("ATG1", "ATG13", "ATG17", "ATG29", "ATG31", "ATG9", "VPS15", "VPS30", "VPS34", "ATG14", "ATG38", "ATG2", "ATG18", "ATG21", "ATG5", "ATG10", "ATG12", "ATG16", "ATG7", "ATG3", "ATG4", "ATG8")
 
 Autophagy.FC <- data.frame(Proteome.DA) %>%
@@ -557,63 +557,10 @@ ggplot(Autophagy.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
   labs(fill = expression(Log[2] * "(Fold-change)")) +
   ggtitle("Autophagy proteins")
 
-ggsave("../FINAL_Figures/FigureS3/AutophagyProteinAbundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
-
-# Correlate protein level with RNA level for heat shock proteins (Figure 4B)
-TranscriptData <- read.csv("MistranslatingtRNATranscriptData.csv")
-
-HSEResponsive <- c("FES1", "SSE1", "SSE2", "SSA1", "SSA2", "SSA3", "SSA4", "APJ1", "SIS1", "YDJ1", "HSC82", "HSP82", "AHA1", "CPR6", "STI1", "GRE3", "HOR7", "HRK1", "HSP30", "SPI1", "HSP10", "HSP60", "HSP78", "KAR2", "MDJ1", "SSC1", "BSC5", "MBF1", "TMA10", "ZPR1", "ATG41", "IRA2", "KSP1", "PIN3", "RIE1", "RPN4", "UBI4", "HSP104", "HSP42", "HSP26", "CUR1", "BTN2")
-
-HSEResponsive.Proteome <- data.frame(Proteome.DA) %>%
-  filter(Protein %in% HSEResponsive) %>%
-  dplyr::select(Protein,
-                log2FC,
-                adj.pvalue,
-                Label)
-
-HSEResponsive.Transcriptome <- data.frame(TranscriptData) %>%
-  filter(Common %in% HSEResponsive) %>%
-  dplyr::select(Protein = Common,
-                log2FC = log2FoldChange,
-                adj.pvalue = padj,
-                Label = Comparison)
-
-HSEResponsive.ProteomeTranscriptome <- full_join(HSEResponsive.Proteome, HSEResponsive.Transcriptome, by = c("Protein", "Label"), suffix = c(".Proteome", ".Transcriptome")) %>%
-  mutate(MistranslationShort = case_when(Label == "ProAla_vs_Ctrl" ~ "P\u2192A",
-                                    Label == "ProSer_vs_Ctrl" ~ "P\u2192S",
-                                    Label == "ArgSer_vs_Ctrl" ~ "R\u2192S")) %>%
-  mutate(MistranslationLong = case_when(Label == "ProAla_vs_Ctrl" ~ "Pro\u2192Ala",
-                                         Label == "ProSer_vs_Ctrl" ~ "Pro\u2192Ser",
-                                         Label == "ArgSer_vs_Ctrl" ~ "Arg\u2192Ser")) %>%
-  mutate(MistranslationLong = factor(MistranslationLong, levels = c("Pro\u2192Ala", "Pro\u2192Ser", "Arg\u2192Ser"))) 
-
-ggplot(HSEResponsive.ProteomeTranscriptome, aes(x = log2FC.Transcriptome, y = log2FC.Proteome, color = MistranslationLong, text = Protein)) +
-  geom_point(size = 2) +
-  theme_matt() + 
-  facet_wrap(~MistranslationLong, ncol = 1)  +
-  geom_smooth(method = "lm", se = FALSE) +
-  stat_cor(method = "pearson") +
-  scale_color_manual(values= c("Pro\u2192Ala" = "#58c87e", "Pro\u2192Ser" = "#f8c754", "Arg\u2192Ser" = "#a165a7")) +
-  theme(legend.position = "none") +
-  labs(x = expression(log[2]("FC Transcript Abundance")), 
-       y = expression(log[2]("FC Protein Abundance"))) 
-
-ggsave("../FINAL_figures/Figure4/HeatShockProteinTranscriptCorrelation.pdf", device = cairo_pdf, width = 3.5, height = 9)
-
-# Create boxplot of just transcript abundance (Figure S2)
-ggplot(HSEResponsive.ProteomeTranscriptome, aes(x = MistranslationShort, y = log2FC.Transcriptome, color = Label, text = Protein)) +
-  geom_boxplot(outlier.shape = NA) +
-  theme_matt() +
-  geom_jitter(width = 0.2, size = 2) +
-  scale_color_manual(values= c("ProAla_vs_Ctrl" = "#58c87e", "ProSer_vs_Ctrl" = "#f8c754", "ArgSer_vs_Ctrl" = "#a165a7")) +
-  labs(y = expression(log[2]("Fold Change Transcript Abundance")), x = "") +
-  theme(legend.position = "none") +
-  ggtitle("Heat Shock Responsive Genes")
-
-ggsave("../FINAL_figures/FigureS2/HeatShockTranscriptResponse.pdf", device = cairo_pdf, width = 4, height = 5)
+ggsave("../FINAL_Figures/FigureS2/AutophagyProteinAbundance.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 20)
 
 
-## Heatmap of differentially regulate proteins from all mistranslating strains (Figure 3)
+## Heatmap of differentially regulate proteins from all mistranslating strains (Figure 3B)
 # Take only the columns needed and split into two data frames - one for each tRNA
 ProSer.DA <- Proteome.DA %>%
   filter(Label == "ProSer_vs_Ctrl") %>%
@@ -766,7 +713,7 @@ AffectedPhosphoProteins <- Phospho.DA %>% filter(adj.pvalue <= 0.05) %>% filter(
 length(unique(AffectedPhosphoProteins$GlobalProtein)) # 456 proteins
 
 
-## Heatmap of differentially regulate phosphosites from all mistranslating strains (Figure 5A)
+## Heatmap of differentially regulate phosphosites from all mistranslating strains (Figure 4A)
 # Take only the columns needed and split into two data frames - one for each tRNA
 ProSer.PhosphoDA <- Phospho.DA %>%
   filter(Label == "ProSer_vs_Ctrl") %>%
@@ -796,7 +743,7 @@ DiffAbundPhospho <- ProSer.PhosphoDA %>%
   na.omit() %>%
   mutate(Significant = ifelse(adj.pvalue.ProSer < 0.05 | adj.pvalue.ArgSer < 0.05 | adj.pvalue.ProAla < 0.05, T, F))
 
-# Heatmap of differentially abundant genes
+# Heatmap of differentially abundant phosphosites
 HeatmapPhospho <- DiffAbundPhospho %>%
   dplyr::select(Protein, FoldChange.ProSer, FoldChange.ArgSer, FoldChange.ProAla)
 
@@ -817,7 +764,7 @@ Heatmap.Figure.Phospho <- pheatmap(CleanHeatmapPhospho,
                            #annotation_col = annot.phospho,
                            breaks = breaks)
 
-svg(filename = "../FINAL_Figures/Figure5/PhosphoProteomeHeatMap.svg", width = 10, height = 5)
+svg(filename = "../FINAL_Figures/Figure4/PhosphoProteomeHeatMap.svg", width = 10, height = 5)
 Heatmap.Figure.Phospho
 dev.off()
 
@@ -829,7 +776,7 @@ write.csv(heatmap.clust.phospho, "../FINAL_data/PhosphoproteomeHeatmapClusters.c
 
 write.csv(Phospho.DA, "../FINAL_data/AllPhosphoProteinsInProteomeDataset.csv")
 
-# Kinase substrate enrichment analysis and plot (Figure 5B)
+# Kinase substrate enrichment analysis and plot (Figure 4C)
 # Read in Kinase-PhosphoSite file
 KS.data <- Phospho.DA %>%
   separate(Protein, into = c("Protein", "ResidueSite")) %>%
@@ -881,6 +828,51 @@ clust.annot <- KS.data %>%
   dplyr::select(reference = ref, cluster) %>% 
   distinct() %>% 
   left_join(ks)
+
+# Plot of sites for each kinase (Supplemental Figure and Figure 4B)
+Site.Kinase.FC <- KS.data %>%
+  dplyr::rename(reference = ref) %>%
+  left_join(ks, by = c("reference")) %>%
+  na.omit() %>%
+  mutate(tRNA = ifelse(test_label == "ProAla_vs_Ctrl", "Pro\u2192Ala",
+                       ifelse(test_label == "ProSer_vs_Ctrl", "Pro\u2192Ser",
+                              ifelse(test_label == "ArgSer_vs_Ctrl", "Arg\u2192Ser", NA)))) %>%
+  mutate(tRNA = fct_relevel(tRNA, "Pro\u2192Ala", "Pro\u2192Ser", "Arg\u2192Ser"))
+
+ggplot(Site.Kinase.FC, aes(x = kinase.name, y = log2_fc, color = tRNA)) +
+  geom_boxplot() +
+  theme_matt() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+  facet_wrap(~tRNA, ncol = 1) +
+  ylab("log2(Fold Change)") +
+  xlab("") +
+  scale_color_manual(values= c("Pro\u2192Ala" = "#58c87e", "Pro\u2192Ser" = "#f8c754", "Arg\u2192Ser" = "#a165a7"))
+
+ggsave("../FINAL_Figures/Figure4/AllKinaseSites.pdf", device = cairo_pdf, width = 17, height = 12)
+
+# Plot boxplots for ATG1, CDC28 and Tor1 specifically
+SpecificKinases <- Site.Kinase.FC %>%
+  filter(kinase.name == "ATG1" |
+           kinase.name == "CDC28" |
+           kinase.name == "TORC1") %>%
+  mutate(tRNA = ifelse(test_label == "ProAla_vs_Ctrl", "Pro\u2192Ala",
+                       ifelse(test_label == "ProSer_vs_Ctrl", "Pro\u2192Ser",
+                              ifelse(test_label == "ArgSer_vs_Ctrl", "Arg\u2192Ser", NA)))) %>%
+  mutate(tRNA = fct_relevel(tRNA, "Pro\u2192Ala", "Pro\u2192Ser", "Arg\u2192Ser"))
+
+
+ggplot(SpecificKinases, aes(x = kinase.name, y = log2_fc, color = tRNA)) +
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+  geom_violin(position = position_dodge(width = 0.8), trim = FALSE) +
+  geom_boxplot(width = 0.15, position = position_dodge(width = 0.8), outlier.shape = NA) +
+  geom_jitter(data = SpecificKinases %>% filter(regulated != "ns"), aes(color = tRNA), position = position_jitterdodge(jitter.width = 0.4, dodge.width = 0.8), alpha = 0.75) +
+  theme_matt() +
+  ylab("Log2(Fold Change)") +
+  xlab("") +
+  scale_color_manual(values= c("Pro\u2192Ala" = "#58c87e", "Pro\u2192Ser" = "#f8c754", "Arg\u2192Ser" = "#a165a7"))
+
+ggsave("../FINAL_Figures/Figure4/SpecificKinasesBoxplot.pdf", device = cairo_pdf, width = 6, height = 5)
 
 kinase.df <- ks %>%
   ungroup %>% 
@@ -961,9 +953,9 @@ ggplot(ks.enrich2) +
   theme(legend.position="top",  plot.margin = margin(50, 50, 50, 50)) +
   theme(axis.text.x = element_text(size = 10,angle = 90), axis.text.y = element_text(size = 10), legend.text =element_text(size = 10) )
 
-ggsave("../FINAL_Figures/Figure5/DownRegulatedKinase_plot.pdf", device = cairo_pdf, width = 4, height = 4, units = "in")
+ggsave("../FINAL_Figures/Figure4/DownRegulatedKinase_plot.pdf", device = cairo_pdf, width = 4, height = 4, units = "in")
 
-# Heat map for CDC5 protein level and phospho activation site, Bfa1 phospho, Nud1 phospho, Cdc14 phospho, Net1 phospho (Figure 5C)
+# Heat map for CDC5 protein level and phospho activation site, Bfa1 phospho, Nud1 phospho, Cdc14 phospho, Net1 phospho (Figure 4D)
 CDC5Protein.FC <- data.frame(Proteome.DA) %>%
   filter(Protein == "CDC5") %>%
   mutate(Mistranslation = case_when(Label == "ProAla_vs_Ctrl" ~ "P\u2192A",
@@ -987,7 +979,7 @@ ggplot(CDC5Protein.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure5/Cdc5_Protein.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure4/Cdc5_Protein.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 CDC5Phospho.FC <- data.frame(Phospho.DA) %>%
   filter(Protein == "CDC5_T70") %>%
@@ -1012,7 +1004,7 @@ ggplot(CDC5Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure5/Cdc5_T70.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure4/Cdc5_T70.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 CDC14Phospho.FC <- data.frame(Phospho.DA) %>%
   filter(Protein == "CDC14_S408" |
@@ -1038,7 +1030,7 @@ ggplot(CDC14Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure5/Cdc14_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure4/Cdc14_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 Net1Sites <- c("NET1_T676", "NET1_T357", "NET1_T288", "NET1_T1017", "NET1_S830", "NET1_S803", "NET1_S744", "NET1_S679", "NET1_S385", "NET1_S166", "NET1_S1032")
 
@@ -1065,7 +1057,7 @@ ggplot(NET1Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure5/NET1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure4/NET1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 Bfa1Sites <- c("BFA1_S274", "BFA1_T340")
 
@@ -1092,7 +1084,7 @@ ggplot(BFA1Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure5/Bfa1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure4/Bfa1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 Nud1Sites <- c("NUD1_S63", "NUD1_S240", "NUD1_S460")
 
@@ -1119,9 +1111,9 @@ ggplot(NUD1Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure5/Nud1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure4/Nud1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
-# Plot of Clb2 levels (Figure 5D)
+# Plot of Clb2 levels (Figure 4E)
 Clb2 <- ProteinLevel %>% 
   filter(Protein == "CLB2") %>%
   mutate(MistranslationShort = case_when(GROUP == "ProAla" ~ "P\u2192A",
@@ -1144,9 +1136,9 @@ ggplot(Clb2, aes(x = MistranslationShort, y = LogIntensities, color = Mistransla
        x = "") +
   ggtitle("Clb2p Levels")
 
-ggsave("../FINAL_Figures/Figure5/Clb2LevelsBoxplot.pdf", device = cairo_pdf, width = 3.5, height = 4)
+ggsave("../FINAL_Figures/Figure4/Clb2LevelsBoxplot.pdf", device = cairo_pdf, width = 3.5, height = 4)
 
-# Plot of Sic1 levels (Figure 5D)
+# Plot of Sic1 levels (Figure 4E)
 Sic1 <- ProteinLevel %>% 
   filter(Protein == "SIC1") %>%
   mutate(MistranslationShort = case_when(GROUP == "ProAla" ~ "P\u2192A",
@@ -1169,10 +1161,10 @@ ggplot(Sic1, aes(x = MistranslationShort, y = LogIntensities, color = Mistransla
        x = "") +
   ggtitle("Sic1p Levels")
 
-ggsave("../FINAL_Figures/Figure5/Sic1LevelsBoxplot.pdf", device = cairo_pdf, width = 3.5, height = 4)
+ggsave("../FINAL_Figures/Figure4/Sic1LevelsBoxplot.pdf", device = cairo_pdf, width = 3.5, height = 4)
   
 
-# Lollipop plot of Eft1 (Figure 6A)
+# Lollipop plot of Eft1 (Figure 5A)
 # Plot phospho-site differential abundance for different proteins as lollipop plots
 # Read in yeast FASTA file
 YeastFASTA <- readAAStringSet("2023-02-23-decoys-reviewed-contam-UP000002311.fas")
@@ -1226,9 +1218,9 @@ ggplot(Eft1PhosphoSites, aes(x = Site, y = log2FC, color = Label)) +
   geom_point(data = Eft1PhosphoSites, x = Eft1PhosphoSites$Site, y = 0, color = "red", size = 3) +
   ggtitle("Eft1 PhosphoSites")
 
-ggsave("../FINAL_Figures/Figure6/Eft1PhosphoSites.pdf", device = cairo_pdf, width = 5, height = 3)
+ggsave("../FINAL_Figures/Figure5/Eft1PhosphoSites.pdf", device = cairo_pdf, width = 5, height = 3)
 
-# Phosphosites on proteins involved in translation other than EFT1 (Figure 6C)
+# Phosphosites on proteins involved in translation other than EFT1 (Figure 5C)
 # Ded1 regulated phosphosites
 Ded1Sites <- c("DED1_T282", "DED1_S576", "DED1_S572", "DED1_S55", "DED1_S543", "DED1_S369", "DED1_S263")
 
@@ -1255,7 +1247,7 @@ ggplot(DED1Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure6/Ded1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure5/Ded1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 # Sup45 regulated phosphosites
 Sup45Sites <- c("SUP45_S67")
@@ -1283,7 +1275,7 @@ ggplot(SUP45Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure6/Sup45_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure5/Sup45_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 # Tef1 regulated phosphosites
 Tef1Sites <- c("TEF1_S237", "TEF1_T240")
@@ -1311,7 +1303,7 @@ ggplot(Tef1Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure6/Tef1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure5/Tef1_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 # Sui2 regulated phosphosites
 Sui2Sites <- c("SUI2_S52", "SUI2_S91")
@@ -1339,7 +1331,7 @@ ggplot(Sui2Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) +
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure6/Sui2_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure5/Sui2_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
 
 # Tif4631 regulated phosphosites
 Tif4631Sites <- c("TIF4631_T276", "TIF4631_S916", "TIF4631_S920", "TIF4631_S502")
@@ -1367,4 +1359,4 @@ ggplot(Tif4631Phospho.FC, aes(y = Proteins, x = Mistranslation, fill = log2FC)) 
         panel.ontop = T) +
   labs(fill = expression(Log[2] * "(Fold-change)"))
 
-ggsave("../FINAL_Figures/Figure6/Tif4631_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
+ggsave("../FINAL_Figures/Figure5/Tif4631_Phosphorylation.pdf", device = cairo_pdf, units = "in", width = 4.5, height = 10)
