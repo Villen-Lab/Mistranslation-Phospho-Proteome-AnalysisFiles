@@ -8,7 +8,7 @@ This repository contains outputs and data analysis scripts to accompany analysis
 
 **SearchOutputs:** Output files of either FragPipe (for DDA analysis of mistranslation frequency and new phosphosites) or DIA-NN (for DIA analysis of proteome and phosphoproteome samples) that are further analyzed in the R scripts containing in the AnalysisCode folder.
 
-**MSstatsOutputs:** Output files from MSstats analysis containin protein and phosphosite abundance, and differential abundance analysis for proteome and phosphoproteome.
+**MSstatsOutputs:** Output files from MSstats analysis containing protein and phosphosite abundance, and differential abundance analysis for proteome and phosphoproteome.
 
 **AnalysisCode:** R scripts used to analyze the DIA-NN and FragPipe outputs and create the figures presented in the manuscript. Also contains additional input files (e.g. yeast kinase-substrate data) required for some of the analyses.
 
